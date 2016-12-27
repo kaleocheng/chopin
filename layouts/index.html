@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+{{partial "head.html"}}
+<body>
+    <div class="center-container">
+        {{partial "header.html"}}
+        <div class="main">
+            <div class="articles">
+                {{ range first (index .Site.Params "HomepagePosts" | default 3) (where .Data.Pages "Type" "post") }}
+                <h2>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    <span>{{ .Date | dateFormat "Jan 2, 2006" }}</span>
+                </h2>
+                {{end}}
+            </div>
+        </div>
+        {{partial "footer.html"}}
+    </div>
+</body>
+</html>
