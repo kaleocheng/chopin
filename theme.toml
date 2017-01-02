@@ -1,0 +1,11 @@
+name = "Chopin"
+license = "MIT"
+licenselink = "https://github.com/kaleocheng/chopin/blob/master/LICENSE.md"
+description = "A sample blog theme for hugo"
+homepage = "https://github.com/kaleocheng/chopin"
+tags = ["minimal", "clean"]
+features = ["blog"]
+
+[author]
+  name = "Kaleo Cheng"
+  homepage = "https://github.com/kaleocheng"
