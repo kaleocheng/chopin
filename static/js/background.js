@@ -50,16 +50,7 @@ function() {
     u.style.cssText = "position:fixed;top:0;left:0;z-index:" + m.z + ";opacity:" + m.o,
     e("body")[0].appendChild(u),
     o(),
-    window.onresize = o,
-    window.onmousemove = function(n) {
-        n = n || window.event,
-        w.x = n.clientX,
-        w.y = n.clientY
-    },
-    window.onmouseout = function() {
-        w.x = null,
-        w.y = null
-    };
+    window.onresize = o;
     for (var y = [], s = 0; m.n > s; s++) {
         var f = x() * c,
         h = x() * a,
