@@ -2,12 +2,13 @@
 <html lang="{{ .Site.LanguageCode }}">
 
 {{partial "head.html"}}
+
 <body>
     <div class="center-container">
         {{partial "header.html"}}
         <div class="main">
             <div class="articles">
-                {{ range first (index .Site.Params "HomepagePosts" | default 3) (where .Data.Pages "Type" "post") }}
+                {{ range first (index .Site.Params "HomepagePosts" | default 7) (where .Data.Pages "Type" "post") }}
                 <h2>
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
                     <span>{{ .Date | dateFormat "Jan 2, 2006" }}</span>
@@ -19,4 +20,5 @@
     </div>
     <!--<script type="text/javascript" src="{{ .Site.BaseURL }}/js/background.js"></script>-->
 </body>
+
 </html>
