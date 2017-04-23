@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel='alternate' type='application/rss+xml' title='atom 1.0' href='/feed' />
+    <title>Kaleo's Blog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/chopin.css" />
+    <link rel="shortcut icon" href="{{ .Site.BaseURL }}/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ .Site.BaseURL }}/images/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="center-container">
+        <div class="main">
+            <p> <button id="subscibe">订阅</button></p>
+            <form class="subscibe-form">
+                <input class="email" type="email" value="" placeholder="输入邮箱地址" />
+                <input type="submit" value="OK" />
+            </form>
+            <script type="text/javascript" src="{{ .Site.BaseURL }}/js/subscibe.js"></script>
+        </div>
+    </div>
+    <!--<script type="text/javascript" src="{{ .Site.BaseURL }}/js/background.js"></script>-->
+</body>
+
+</html>
