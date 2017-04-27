@@ -78,16 +78,12 @@ hr {
             }
         }
     }
-    #email {
+    .header-right {
         //display: none;
         width: 60%;
         text-align: right;
         float: right;
         color: $shadow_color;
-        p {
-            font-style: italic;
-            font-weight: lighter;
-        }
     }
 }
 
