@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 
-{{partial "head.html"}}
+<head>
+    <meta charset="UTF-8">
+    <link rel='alternate' type='application/rss+xml' title='atom 1.0' href='/feed' />
+    <title>{{ $.Param "my_title" }}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/chopin.css" />
+    <link rel="shortcut icon" href="{{ .Site.BaseURL }}/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ .Site.BaseURL }}/images/favicon.ico" type="image/x-icon">
+</head>
 <body>
     <div class="center-container">
-        {{partial "header.html"}}
+        <header class="header">
+            <div id="logo">
+                <a href="/">{{ .Site.Title }}</a>
+            </div>
+            <div class="header-right">
+                <a href="https://github.com/KaleoCheng">Github</a>
+            </div>
+        </header>
         <div class="main">
             <article>
                 <header>
