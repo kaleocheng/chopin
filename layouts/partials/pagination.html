@@ -1,0 +1,7 @@
+<div class="pagination">
+  {{ if .HasPrev }}
+    <a class="prev" href="{{ .Prev.URL }}">上一页</a>
+    <span class="number">{{ .PageNumber}}/{{ .TotalPages }}</span>
+  {{ else }}<a></a>{{ end }}
+  {{ if .HasNext }}<a class="next" href="{{ .Next.URL }}">更多</a>{{ else }}<a></a>{{ end }}
+</div>

@@ -99,6 +99,7 @@ hr {
 
 .main {
     width: 100%;
+    margin-bottom: 25px;
     .articles {
         h2 {
             margin-top: 2em;
@@ -217,6 +218,30 @@ hr {
         }
     }
 }
+
+/*------------------*/
+
+
+/*----- pagination -----*/
+
+
+/*------------------*/
+.pagination {
+    text-align: center;
+    .prev {
+        float: left;
+
+    }
+    span {
+        .number {
+            
+        }
+    }
+    .next {
+        float: right;
+    }
+}
+
 
 
 /*------------------*/
