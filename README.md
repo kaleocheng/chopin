@@ -27,11 +27,6 @@ hugo --theme="chopin"
 
 <img src="images/screenshot.png">
 
-## Changelog
-
-> v0.1.0
-
-* Initial release
 
 ## License
 
