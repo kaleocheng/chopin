@@ -188,11 +188,19 @@ hr {
                 margin-bottom: 0.8em;
                 border: 1px solid #ccc;
                 border-radius: 10px;
+                code {
+                    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+                    font-size: 80%;
+                    white-space: pre-wrap;
+                    color: black;
+                }
             }
             code {
                 font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
                 font-size: 80%;
                 white-space: pre-wrap;
+                //background-color: #EEEEEE;
+                //color: #CC6666;
             }
             p {
                 //text-indent: 2em;
@@ -200,7 +208,7 @@ hr {
                 padding-top: 0.75em;
                 padding-bottom: 0.75em;
                 a {
-                    color: #336699;
+                    color: #CC6666;
                 }
                 img {
                     max-width: 85%;
