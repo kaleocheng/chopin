@@ -65,26 +65,25 @@ hr {
 .header {
     width: 100%;
     padding: 40px 0;
+    a {
+        color: black;
+        transition: color linear .2s;
+        &:hover {
+            color: $logo_link_color;
+            text-decoration: none;
+        }
+    }
     #logo {
         width: 40%;
         float: left;
         font-size: 1.25em;
-        a {
-            color: black;
-            transition: color linear .2s;
-            &:hover {
-                color: $logo_link_color;
-                text-decoration: none;
-            }
-        }
+        
     }
     .header-right {
-        //display: none;
         width: 60%;
+        float: right;
         text-align: right;
         //font-family: monospace;
-        float: right;
-        color: $shadow_color;
     }
 }
 
