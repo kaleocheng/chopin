@@ -96,8 +96,11 @@ hr {
 /*------------------*/
 
 @media (max-width: 400px) {  
-    .hidden-mobile {
+    .hidden-when-mobile {
         display: none;  
+    }
+    .display-when-mobile {
+        display: inline !important;
     }
 }
 
@@ -116,6 +119,9 @@ hr {
                 float: right;
                 font-family: monospace;
                 font-size: 0.8em;
+            }
+            .date-without-year {
+                display: none;
             }
         }
     }

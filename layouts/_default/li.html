@@ -1,4 +1,5 @@
 <h2>
     <a href="{{ .Permalink }}">{{ .Title }}</a>
-    <span class="hidden-mobile">{{ .Date | dateFormat "Jan 2, 2006" }}</span>
+    <span class="hidden-when-mobile">{{ .Date | dateFormat "Jan 2, 2006" }}</span>
+    <span class="date-without-year display-when-mobile">{{ .Date | dateFormat "Jan 2" }}</span>
 </h2>
