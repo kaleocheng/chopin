@@ -95,12 +95,27 @@ hr {
 
 /*------------------*/
 
-@media (max-width: 400px) {  
-    .hidden-when-mobile {
+@media (max-width: 500px) {  
+    .hidden-when-small {
         display: none;  
     }
-    .display-when-mobile {
+    .display-when-small {
         display: inline !important;
+    }
+}
+@media (max-width: 400px) {  
+    .hidden-when-smaller {
+        display: none !important;  
+    }
+
+    .display-when-smaller {
+        display: inline !important;
+    }
+}
+
+@media (max-width: 355px) {  
+    .hidden-when-smallest {
+        display: none !important;  
     }
 }
 
@@ -120,7 +135,7 @@ hr {
                 font-family: monospace;
                 font-size: 0.8em;
             }
-            .date-without-year {
+            .hidde {
                 display: none;
             }
         }
