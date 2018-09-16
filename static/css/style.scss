@@ -1,3 +1,5 @@
+@import url(https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/fira_code.css);
+
 $bg_color: #fdf6e3;
 $logo_link_color: #cd5c5c;
 $shadow_color: #999999;
@@ -7,7 +9,7 @@ $shadow_color: #999999;
 }
 
 body {
-    font-family: 'adelle', 'Georgia', serif;
+    font-family: 'Fira Code', 'adelle', 'Georgia', serif;
     font-size: 18px;
     line-height: 1.5em;
     background: $bg_color;
@@ -147,7 +149,7 @@ hr {
             text-align: center;
             h1 {
                 padding-bottom: 20px;
-                font-family: 'adelle', 'Georgia', serif，arial, sans-serif;
+                font-family: 'Fira Code', 'adelle', 'Georgia', serif，arial, sans-serif;
                 font-weight: normal;
                 font-size: 1.5em;
             }
@@ -219,13 +221,13 @@ hr {
                 border: 1px solid #ccc;
                 border-radius: 10px;
                 code {
-                    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+                    font-family: "Fire Code", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
                     font-size: 80%;
                     white-space: pre-wrap;
                 }
             }
             code {
-                font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+                font-family: "Fira Code", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
                 font-size: 80%;
                 white-space: pre-wrap;
             }

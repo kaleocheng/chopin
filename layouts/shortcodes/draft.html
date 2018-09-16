@@ -1,0 +1,3 @@
+<link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet">
+<script src="{{"js/draft.bundle.js" | relURL}}">draft.init()</script>
+<div class="draft" align="{{ if .Get "align" }}{{ .Get "align" }}{{ else }}center{{ end }}">{{ safeHTML .Inner }}</div>
