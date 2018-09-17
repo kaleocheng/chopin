@@ -1,6 +1,8 @@
 <h2>
     <a href="{{ .Permalink }}">{{ .Title }}</a>
+    {{ if isset .Site.Params "show_date" }}
     <span class="hidden-when-small hidden-when-smaller hidden-when-smallest">{{ .Date | dateFormat "Jan 2, 2006" }}</span>
     <span class="hidde  display-when-small hidden-when-smaller hidden-when-smallest">{{ .Date | dateFormat "Jan 2" }}</span>
     <span class="hidde  hidden-when-small display-when-smaller hidden-when-smallest">{{ .Date | dateFormat "Jan" }}</span>
+    {{ end }}
 </h2>
