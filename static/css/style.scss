@@ -79,7 +79,7 @@ hr {
         width: 40%;
         float: left;
         font-size: 1.25em;
-        
+
     }
     .header-right {
         width: 60%;
@@ -97,17 +97,17 @@ hr {
 
 /*------------------*/
 
-@media (max-width: 500px) {  
+@media (max-width: 500px) {
     .hidden-when-small {
-        display: none;  
+        display: none;
     }
     .display-when-small {
         display: inline !important;
     }
 }
-@media (max-width: 400px) {  
+@media (max-width: 400px) {
     .hidden-when-smaller {
-        display: none !important;  
+        display: none !important;
     }
 
     .display-when-smaller {
@@ -115,9 +115,9 @@ hr {
     }
 }
 
-@media (max-width: 355px) {  
+@media (max-width: 355px) {
     .hidden-when-smallest {
-        display: none !important;  
+        display: none !important;
     }
 }
 
@@ -134,6 +134,17 @@ hr {
             font-size: 1.35em;
             span {
                 float: right;
+                font-family: monospace;
+                font-size: 0.8em;
+            }
+            .hidde {
+                display: none;
+            }
+        }
+        p {
+            margin-top: 1em;
+            span {
+                float: left;
                 font-family: monospace;
                 font-size: 0.8em;
             }
@@ -272,7 +283,7 @@ hr {
     }
     span {
         .number {
-            
+
         }
     }
     .next {

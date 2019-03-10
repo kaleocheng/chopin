@@ -92,6 +92,14 @@ hr {
       font-size: 0.8em; }
     .main .articles h2 .hidde {
       display: none; }
+  .main .articles p {
+    margin-top: 1em; }
+    .main .articles p span {
+      float: left;
+      font-family: monospace;
+      font-size: 0.8em; }
+    .main .articles p .hidde {
+      display: none; }
   .main article header {
     padding-top: 50px;
     padding-bottom: 30px;
