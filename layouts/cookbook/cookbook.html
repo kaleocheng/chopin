@@ -7,7 +7,7 @@
         {{partial "header.html" .}}
         <div class="main">
             <div class="articles">
-                {{ $paginator := .Paginate (where .Data.Pages "Type" "blog") }}
+                {{ $paginator := .Paginate (where .Data.Pages "Type" "cookbook") }}
                 {{ range $paginator.Pages }}
                 {{ .Render "li" }}
                 {{ end }}

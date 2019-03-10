@@ -3,6 +3,15 @@
         <a href="/">{{ .Site.Title }}</a>
     </div>
     <div class="header-right">
-        <a href="{{ .Site.Params.header_right_url }}">{{ .Site.Params.header_right_title }}</a>
+        {{ range .Site.Menus.main }}
+        {{ if eq $.Kind "home" }}
+        {{ $.Scratch.Set "active" ($.IsMenuCurrent "main" .) }}
+        {{ else }}
+        {{ $.Scratch.Set "active" (eq .Identifier $.Type) }}
+        {{ end }}
+        {{ $active := $.Scratch.Get "active" }}
+        <a class="{{ if $active }}active{{end}}" href="{{ .URL | absURL }}">{{ .Name }}</a>
+        {{ end  }}
+
     </div>
 </header>

@@ -58,6 +58,12 @@ hr {
     width: 60%;
     float: right;
     text-align: right; }
+    .header .header-right .active {
+      color: inherit; }
+    .header .header-right .active::before {
+      content: "["; }
+    .header .header-right .active::after {
+      content: "]"; }
 
 /*------------------*/
 /*----- main -----*/

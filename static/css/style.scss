@@ -85,6 +85,15 @@ hr {
         width: 60%;
         float: right;
         text-align: right;
+        .active {
+            color:inherit;
+        }
+        .active::before {
+            content: "[";
+        }
+        .active::after {
+            content: "]";
+        }
         //font-family: monospace;
     }
 }
