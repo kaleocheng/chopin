@@ -33,7 +33,9 @@ a {
   .references:hover {
     text-decoration: none; }
   .references::before {
-    content: "Reference: "; }
+    content: "Reference:["; }
+  .references::after {
+    content: "]"; }
 
 hr {
   height: 1px;
