@@ -28,7 +28,7 @@ window.onload = function () {
             container: '#hits',
             templates: {
                 empty: 'No results',
-                item: '<h2><a href="{{ permalink }}">{{#title}}{{ title }}{{/title}}{{^title}}{{ url }}{{/title}}</a><span>{{date}}</span></h2>'
+                item: '<h2><a href="{{ permalink }}">{{#title}}{{ title }}{{/title}}{{^title}}{{ url }}{{/title}}</h2>'
             }
         })
     );
