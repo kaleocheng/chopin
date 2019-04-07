@@ -33,6 +33,21 @@ a {
     }
 }
 
+.references {
+    color: $shadow_color;
+    display: block;
+    background: bisque;
+    padding: 1em 1em 1em 1em;
+    border-radius: 10px;
+    &:hover {
+       text-decoration: none;
+    }
+    &::before {
+        content: "Reference: ";
+    }
+}
+
+
 hr {
     height: 1px;
     border: none;
