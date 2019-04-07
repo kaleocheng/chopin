@@ -85,6 +85,29 @@ hr {
         width: 60%;
         float: right;
         text-align: right;
+        #search-box {
+            .ais-search-box{
+                input {
+                    background: url("https://png.icons8.com/search") no-repeat;
+                    background-size: 1rem 1rem;
+                    border: none;
+                    border-bottom: 1px solid #000000;
+                    box-shadow: none;
+                    outline:none;
+                    font-size: 0.8em;
+                    padding-left:20px;
+                }
+                input:focus {
+                    box-shadow: none;
+                }
+                .ais-search-box--magnifier-wrapper{
+                    display: none !important;
+                }
+                .ais-search-box--reset-wrapper{
+                    display: none !important;
+                }
+            }
+        }
         .active {
             color:inherit;
         }
@@ -180,6 +203,29 @@ hr {
             }
         }
         .content {
+            #hits {
+                .ais-hits {
+                    .ais-hits--item{
+                        a {
+                            color: #47484b;
+                        }
+                        h2 {
+                            font-weight: normal;
+                            font-size: 1.35em;
+                            font-family: 'Fira Code', 'SimSun', 'adelle', 'Georgia', serif;
+                            span {
+                                float: right;
+                                font-family: monospace;
+                                font-size: 0.8em;
+                            }
+                            .hidde {
+                                display: none;
+                            }
+                        }
+
+                    }
+                }
+            }
             h1 {
                 padding-top: 0.75em;
                 padding-bottom: 0.75em;
