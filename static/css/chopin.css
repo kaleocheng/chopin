@@ -229,6 +229,12 @@ hr {
       -webkit-box-shadow: 3px 3px 3px #777;
       -moz-box-shadow: 3px 3px 3px #777;
       box-shadow: 3px 3px 3px #777; }
+  .main article .content figure img {
+    max-width: 85%;
+    max-height: 85%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
 
 /*------------------*/
 /*----- pagination -----*/
