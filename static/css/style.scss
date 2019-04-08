@@ -318,9 +318,10 @@ hr {
             }
             p {
                 //text-indent: 2em;
-                word-break: break-all;
+                word-break: normal;
                 padding-top: 0.75em;
                 padding-bottom: 0.75em;
+                hyphens: auto;
                 img {
                     max-width: 85%;
                     max-height: 85%;

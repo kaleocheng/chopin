@@ -214,9 +214,10 @@ hr {
     font-size: 80%;
     white-space: pre-wrap; }
   .main article .content p {
-    word-break: break-all;
+    word-break: normal;
     padding-top: 0.75em;
-    padding-bottom: 0.75em; }
+    padding-bottom: 0.75em;
+    hyphens: auto; }
     .main article .content p img {
       max-width: 85%;
       max-height: 85%;
