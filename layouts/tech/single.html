@@ -8,7 +8,7 @@
         <div class="main">
             <article>
                 <header>
-                    <h1>{{ .Title }}</h1>
+                    <h1>{{ with .Draft }}[{{ end }}{{ .Title }}{{ with .Draft }}]{{ end }}</h1>
                     <span> <i class="icon-time"></i>
                         {{ .Date | dateFormat "Jan 2, 2006" }}
                     </span>
