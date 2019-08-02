@@ -3,7 +3,7 @@
   margin: 0; }
 
 body {
-  font-family: "Fira Code", "SimSun", "Lucida Console", Monaco, monospace, "adelle", "Georgia", serif;
+  font-family: "Fira Code", "SimSun", "Lucida Console", Monaco, Consolas, monospace, "adelle", "Georgia", serif;
   font-size: 18px;
   line-height: 1.5em;
   background: #fdf6e3; }
@@ -141,7 +141,7 @@ hr {
     text-align: center; }
     .main article header h1 {
       padding-bottom: 20px;
-      font-family: "Fira Code", "SimSun", "Lucida Console", Monaco, monospace, "adelle", "Georgia", serif;
+      font-family: "Fira Code", "SimSun", "Lucida Console", Monaco, Consolas, monospace, "adelle", "Georgia", serif;
       font-weight: normal;
       font-size: 1.5em; }
     .main article header span {
@@ -153,7 +153,7 @@ hr {
   .main article .content #hits .ais-hits .ais-hits--item h2 {
     font-weight: normal;
     font-size: 1.35em;
-    font-family: "Fira Code", "SimSun", "Lucida Console", Monaco, monospace, "adelle", "Georgia", serif; }
+    font-family: "Fira Code", "SimSun", "Lucida Console", Monaco, Consolas, monospace, "adelle", "Georgia", serif; }
     .main article .content #hits .ais-hits .ais-hits--item h2 span {
       float: right;
       font-family: monospace;
