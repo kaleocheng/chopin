@@ -3,7 +3,7 @@
         <a href="/">{{ .Site.Title }}</a>
     </div>
     <div class="header-right">
-        {{ range .Site.Menus.main }}
+        {{ range after 1 .Site.Menus.main }}
         {{ if eq $.Kind "home" }}
         {{ $.Scratch.Set "active" ($.IsMenuCurrent "main" .) }}
         {{ else }}
