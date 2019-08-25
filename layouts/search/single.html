@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+{{partial "head.html" .}}
+
+
+<body>
+    <div class="center-container">
+        {{partial "header-search.html" .}}
+        <div class="main">
+          <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4"></script>
+          <script src="https://kaleo.blog/js/search.js"></script>
+          <div id="refinement-list"></div>
+          <div id="hits"></div>
+        </div>
+        {{partial "footer.html" .}}
+    </div>
+</body>
+
+</html>
