@@ -4,9 +4,15 @@
 
 <body>
     <div class="center-container">
-        {{partial "header-search.html" .}}
+        {{partial "header.html" .}}
         <div class="main">
             <article>
+                <header>
+                    <h1>{{ with .Draft }}[{{ end }}{{ .Title }}{{ with .Draft }}]{{ end }}</h1>
+                    <span> <i class="icon-time"></i>
+                        {{ .Date | dateFormat "Jan 2, 2006" }}
+                    </span>
+                </header>
                 <div class="content">{{ .Content }} </div>
             </article>
         </div>
