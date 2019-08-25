@@ -1,3 +1,3 @@
-<h2{{ with .Draft }} class="draft" {{ end }}>
+<h2 {{ with .Draft }} class="draft" {{ end }}>
     <a href="{{ .Permalink }}">{{ .Title }}</a>
 </h2>

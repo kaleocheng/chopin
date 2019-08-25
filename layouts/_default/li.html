@@ -1,5 +1,5 @@
-<h2>
-    {{ with .Draft }}[{{ end }}<a href="{{ .Permalink }}">{{ .Title }}</a>{{ with .Draft }}]{{ end }}
+<h2 {{ with .Draft }} class="draft" {{end}}>
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
     <span
         class="hidden-when-small hidden-when-smaller hidden-when-smallest">{{ .Date | dateFormat "Jan 2, 2006" }}</span>
     <span

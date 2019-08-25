@@ -203,6 +203,19 @@ hr {
                 font-size: 0.8em;
             }
 
+            &.draft {
+                color: $shadow_color;
+                a {
+                    color: $shadow_color;
+                }
+                a::before {
+                    content: "[";
+                }
+                a::after {
+                    content: "]";
+                }
+            }
+ 
             .hidde {
                 display: none;
             }
@@ -217,6 +230,15 @@ hr {
                 font-size: 0.8em;
             }
 
+            &.draft {
+                color: $shadow_color;
+                span::before {
+                    content: "[";
+                }
+                span::after {
+                    content: "]";
+                }
+            }
             .hidde {
                 display: none;
             }

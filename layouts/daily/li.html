@@ -1,5 +1,5 @@
-<p>
-    <span>{{ with .Draft }}[{{ end }}{{ .Date | dateFormat "Jan 2 2006" }}{{ with .Draft }}]{{ end }}</span>
+<p {{ with .Draft }} class="draft" {{ end }}>
+    <span>{{ .Date | dateFormat "Jan 2 2006" }}</span>
     <br />
     {{ .Summary | plainify | safeHTML | truncate 500 }}
 </p>
