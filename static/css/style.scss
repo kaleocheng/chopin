@@ -1,5 +1,6 @@
 $bg_color: #fdf6e3;
 $logo_link_color: #cd5c5c;
+$link_color: #cc6666; 
 $shadow_color: #999999;
 $body_font: "Fira Code", "Lucida Console", Monaco, Consolas, monospace, "SimSun", "adelle", "Georgia", serif;
 
@@ -26,7 +27,7 @@ body {
 }
 
 a {
-    color: #CC6666;
+    color: $link_color;
     text-decoration: none;
 
     &:hover {
@@ -35,9 +36,9 @@ a {
 }
 
 .references {
-    color: $shadow_color;
+    color: #93735c;
     display: block;
-    background: bisque;
+    background: #fcf1d8;
     padding: 1em 1em 1em 1em;
     border-radius: 10px;
 
@@ -46,12 +47,9 @@ a {
     }
 
     &::before {
-        content: "Reference:[";
+        content: "➙ ";
     }
 
-    &::after {
-        content: "]";
-    }
 }
 
 hr {
@@ -68,7 +66,7 @@ hr {
 /*-------------------------*/
 
 .center-container {
-    width: 660px;
+    width: 800px;
     max-width: 90%;
     margin: 0 auto;
 }
@@ -395,6 +393,43 @@ hr {
                     box-shadow: 3px 3px 3px #777;
                 }
 
+            }
+
+            table {
+                border-collapse: collapse;
+                border-radius: 10px;
+                overflow: hidden;
+                //box-shadow: 0 0 0 1px;
+                border-style: hidden;
+                width:100%;
+                color: #515256;
+                margin-bottom: 2em;
+                thead {
+                    tr {
+                        font-size:1.1em;
+                        text-align:left;
+                        padding-top:5px;
+                        background-color: #fcf1d8;
+                        padding-bottom:4px;
+                        color: #93735c;
+                    }
+                    th {
+                        padding: 10px;
+                        border: 1px solid #dddddd;
+                    }
+                }
+                tbody {
+                    tr {
+                        
+                    }
+                    td {
+                        vertical-align: top;
+                        border: 1px solid #dddddd;
+                        text-align: left;
+                        padding-left: 0.5em;
+                        padding-right: 0.5em;
+                    }
+                }
             }
 
             figure {
