@@ -398,7 +398,8 @@ hr {
             table {
                 border-collapse: collapse;
                 border-radius: 10px;
-                overflow: hidden;
+                display: block;
+                overflow-x: auto;
                 //box-shadow: 0 0 0 1px;
                 border-style: hidden;
                 width:100%;
@@ -416,6 +417,7 @@ hr {
                     th {
                         padding: 10px;
                         border: 1px solid #dddddd;
+                        border-top: 0;
                     }
                 }
                 tbody {
@@ -431,6 +433,7 @@ hr {
                     }
                 }
             }
+
 
             figure {
                 img {
