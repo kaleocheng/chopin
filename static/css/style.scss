@@ -244,6 +244,9 @@ hr {
     }
 
     article {
+        a {
+            color: #4484c2;
+        }
         header {
             padding-top: 50px;
             padding-bottom: 30px;
@@ -400,7 +403,6 @@ hr {
                 border-radius: 10px;
                 display: block;
                 overflow-x: auto;
-                //box-shadow: 0 0 0 1px;
                 border-style: hidden;
                 width:100%;
                 color: #515256;
