@@ -401,8 +401,7 @@ hr {
             table {
                 border-collapse: collapse;
                 border-radius: 10px;
-                display: block;
-                overflow-x: auto;
+                overflow: hidden;
                 border-style: hidden;
                 width:100%;
                 color: #515256;
