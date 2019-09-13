@@ -3,7 +3,7 @@
     <title>{{ .Page.Title }}</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <meta name="keywords" content="" />
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/chopin.css" />
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/chopin.{{ if  getenv "BUILD_TIME" }}{{ getenv "BUILD_TIME"  }}.{{ end }}css" />
     <link rel="shortcut icon" href="{{ .Site.BaseURL }}/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="{{ .Site.BaseURL }}/images/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL }}/images/apple-touch-icon.png">
