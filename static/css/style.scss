@@ -252,6 +252,13 @@ hr {
     }
 
     article {
+        a {
+            color: #000;
+            border-bottom: 1.5px solid #000;
+            &:hover {
+                text-decoration: none;
+            }
+        }
         header {
             padding-top: 50px;
             padding-bottom: 30px;
