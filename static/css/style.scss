@@ -43,22 +43,6 @@ kbd {
   margin-right: 2px;
 }
 
-.references {
-    color: #93735c;
-    display: block;
-    background: #fcf1d8;
-    padding: 1em 1em 1em 1em;
-    border-radius: 10px;
-
-    &:hover {
-        text-decoration: none;
-    }
-
-    &::before {
-        content: "➙ ";
-    }
-
-}
 
 hr {
     height: 1px;
@@ -259,6 +243,23 @@ hr {
                 text-decoration: none;
             }
         }
+        .references {
+            color: #93735c;
+            display: block;
+            background: #fcf1d8;
+            padding: 1em 1em 1em 1em;
+            border-radius: 10px;
+            border-bottom: 0px;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            &::before {
+                content: "➙ ";
+            }
+        }
+
         header {
             padding-top: 50px;
             padding-bottom: 30px;
