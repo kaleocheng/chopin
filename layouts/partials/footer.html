@@ -2,3 +2,10 @@
     <p> {{ .Site.Copyright }} <a href="{{ .Site.Params.github }}">Github</a>
     </p>
 </footer>
+
+{{ if .Site.BuildDrafts }}
+    {{ if eq .Page.Type "milestone" }}
+        <script src="{{ .Site.BaseURL }}/js/highlight-at.js"></script>
+        <script type="text/javascript">highlight('@')</script>
+    {{ end }}
+{{ end }}
