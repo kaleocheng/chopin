@@ -13,6 +13,11 @@
                         {{ .Date | dateFormat "Jan 2, 2006" }}
                     </span>
                 </header>
+                <aside>
+                    <div id="tableofcontents">
+                        {{ .TableOfContents }}
+                    </div>
+                </aside>
                 <div class="content">{{ .Content }} </div>
             </article>
         </div>
