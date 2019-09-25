@@ -13,11 +13,13 @@
                         {{ .Date | dateFormat "Jan 2, 2006" }}
                     </span>
                 </header>
-                <aside>
-                    <div id="tableofcontents">
-                        {{ .TableOfContents }}
-                    </div>
-                </aside>
+                {{ if gt .WordCount 500 }}
+                    <aside>
+                        <div id="tableofcontents">
+                            {{.TableOfContents}}
+                        </div>
+                    </aside>
+                {{ end }}
                 <div class="content">{{ .Content }} </div>
             </article>
         </div>
