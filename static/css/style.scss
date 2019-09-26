@@ -155,7 +155,17 @@ del {
 
 /*------------------*/
 
+@media (max-width: 1000px) {
+    .grid-container {
+        grid-template-columns: auto auto auto auto auto;
+    }
+}
+
 @media (max-width: 500px) {
+    .grid-container {
+        grid-template-columns: auto auto auto;
+    }
+
     .hidden-when-small {
         display: none;
     }
@@ -166,6 +176,9 @@ del {
 }
 
 @media (max-width: 400px) {
+    .grid-container {
+        grid-template-columns: auto auto;
+    }
     .hidden-when-smaller {
         display: none !important;
     }
@@ -175,7 +188,10 @@ del {
     }
 }
 
-@media (max-width: 355px) {
+@media (max-width: 355px) {  
+    .grid-container {
+        grid-template-columns: auto;
+    }
     .hidden-when-smallest {
         display: none !important;
     }
@@ -252,6 +268,11 @@ del {
             &:hover {
                 text-decoration: none;
             }
+        }
+        .grid-container {
+            display: grid;
+            grid-column-gap: 1em;
+            grid-row-gap: 1em;
         }
         .references {
             color: #93735c;
