@@ -13,8 +13,9 @@
                         {{ .Date | dateFormat "Jan 2, 2006" }}
                     </span>
                 </header>
-                {{ if gt .WordCount 500 }}
+                {{ if gt .WordCount 350 }}
                     <aside>
+                        <h1 id="list-of-contents">List of Contents</h1>
                         <div id="tableofcontents">
                             {{.TableOfContents}}
                         </div>

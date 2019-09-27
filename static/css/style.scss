@@ -2,6 +2,7 @@ $bg_color: #fffff0;
 $logo_link_color: #cd5c5c;
 $link_color: #cc6666; 
 $shadow_color: #999999;
+$dark_shadow_color: #47484b;
 $body_font: "Fira Code", "Lucida Console", Monaco, Consolas, monospace, "SimSun", "adelle", "Georgia", serif;
 
 * {
@@ -309,20 +310,30 @@ del {
                 font-size: 0.9em;
             }
         }
-        #tableofcontents a {
-            color: $shadow_color;
-            border-bottom: 1.5px solid $shadow_color;
+        aside {
+            h1 {
+                padding-top: 0.75em;
+                padding-bottom: 0.75em;
+                font-weight: bold;
+                font-size: 1.25em;
+            }
+
+            #tableofcontents a {
+                color: $dark_shadow_color;
+                border-bottom: 1.5px solid $dark_shadow_color;
+            }
+
+            #tableofcontents nav ul li {
+                clear: left;
+                list-style-type: none;
+            }
+
+            #tableofcontents nav ul li ul li {
+                padding-left: 2em;
+                list-style-type: none;
+            }
         }
 
-        #tableofcontents nav ul li {
-            clear: left;
-            list-style-type: none;
-        }
-
-        #tableofcontents nav ul li ul li {
-            padding-left: 2em;
-            list-style-type: none;
-        }
 
         .content {
             #hits {
