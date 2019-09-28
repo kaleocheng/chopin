@@ -280,14 +280,15 @@ del {
             display: block;
             background: #fcf1d8;
             padding: 1em 1em 1em 1em;
-            border-radius: 10px;
+            border-radius: 5px;
             border-bottom: 0px;
 
             &:hover {
                 text-decoration: none;
             }
 
-            &::before {
+            &::after {
+                float: right;
                 content: "➙ ";
             }
         }
@@ -428,7 +429,7 @@ del {
                 margin-top: 0.8em;
                 margin-bottom: 0.8em;
                 border: 1px solid #ccc;
-                border-radius: 10px;
+                border-radius: 5px;
 
                 code {
                     font-family: "Fire Code", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
@@ -469,20 +470,19 @@ del {
 
             table {
                 border-collapse: collapse;
-                border-radius: 10px;
-                overflow: hidden;
+                display: block;
+                overflow-x: auto;
                 border-style: hidden;
                 width:100%;
                 color: #515256;
                 margin-bottom: 2em;
                 thead {
+                    background-color: #fdf6e3;
                     tr {
                         font-size:1.1em;
                         text-align:left;
                         padding-top:5px;
-                        background-color: #fcf1d8;
                         padding-bottom:4px;
-                        color: #93735c;
                     }
                     th {
                         padding: 10px;
