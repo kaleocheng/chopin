@@ -2,6 +2,7 @@ $bg_color: #fffff0;
 $logo_link_color: #cd5c5c;
 $link_color: #cc6666; 
 $shadow_color: #999999;
+$highlight_color: #ecbeb3;
 $dark_shadow_color: #47484b;
 $body_font: "Fira Code", "Lucida Console", Monaco, Consolas, monospace, "SimSun", "adelle", "Georgia", serif;
 
@@ -57,9 +58,9 @@ del {
 }
 
 .highlight-at {
-    background-color: #ecbeb3;
+    background-color: $highlight_color;
     border-radius: 3px;
-    color: #47484b;
+    color: $dark_shadow_color;
 }
 
 /*-------------------------*/
@@ -420,6 +421,12 @@ del {
 
                 //font-style: italic;
 
+            }
+
+            strong {
+                background-color: $highlight_color;
+                border-radius: 5px;
+                color: $dark_shadow_color;
             }
 
             pre {
