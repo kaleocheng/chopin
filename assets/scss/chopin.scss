@@ -500,6 +500,16 @@ del {
                 }
                 tbody {
                     tr {
+                        td {
+                            kbd {
+                              white-space: nowrap;
+                              border-radius: 3px;
+                              padding: 2px 2px 1px;
+                              border: 1px solid black;
+                              margin-right: 2px;
+                              display: inline-block;
+                            }
+                        }
                         
                     }
                     td {
