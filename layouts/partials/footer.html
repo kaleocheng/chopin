@@ -4,7 +4,7 @@
 </footer>
 
 {{ if .Site.BuildDrafts }}
-    {{ if eq .Page.Type "milestone" }}
+    {{ if eq .Page.Type "plan" }}
         <script src="{{ .Site.BaseURL }}/js/highlight-at.js"></script>
         <script type="text/javascript">highlight('@')</script>
     {{ end }}
