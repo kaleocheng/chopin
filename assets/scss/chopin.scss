@@ -371,16 +371,18 @@ del {
             }
 
 
-            .task-list {
+            .task-list, .task-list ul {
                 list-style-type: none;
             }
 
             .task-list-item:before {
                 content: "[ ]";
+                font-weight: bold;
             }
 
             .task-list-item-done:before {
                 content: "[✔︎]";
+                font-weight: bold;
                 font-size: 0.9em;
             }
             
