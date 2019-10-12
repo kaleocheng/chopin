@@ -375,6 +375,19 @@ del {
                 list-style-type: none;
             }
 
+            .task-list-item:before {
+                content: "[ ]";
+            }
+
+            .task-list-item-done:before {
+                content: "[✔︎]";
+                font-size: 0.9em;
+            }
+            
+            .task-list-item-done {
+                color: $blockquote_color;
+            }
+
             h1 {
                 padding-top: 0.75em;
                 padding-bottom: 0.75em;
