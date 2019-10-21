@@ -296,6 +296,24 @@ del {
             }
         }
 
+        .resource {
+            color: $dark_shadow_color;
+            display: block;
+            background: #bdd2ba;
+            padding: 1em 1em 1em 1em;
+            border-radius: 5px;
+            border-bottom: 0px;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            &::after {
+                float: right;
+                content: "↓ ";
+            }
+        }
+
         header {
             padding-top: 50px;
             padding-bottom: 30px;
