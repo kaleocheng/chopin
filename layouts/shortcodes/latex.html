@@ -1,0 +1,7 @@
+{{ if .Get 0 }}
+<img src="https://math.now.sh?inline={{ .Get 0 | safeHTML }}" />
+{{ else }}
+<figure>
+<img src="https://math.now.sh?from={{ safeHTML .Inner }}" />
+</figure>
+{{ end }}
