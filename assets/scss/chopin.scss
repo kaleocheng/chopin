@@ -41,20 +41,29 @@ a {
 }
 
 kbd {
-  white-space: nowrap;
-  border-radius: 3px;
-  padding: 2px 2px 1px;
-  border: 1px solid black;
-  margin: 1px 0px 1px 2px;
-  display: inline-table;
+    border: 1px solid #666;
+    padding: 0 2px;
+    border-radius: 2px;
+    box-shadow: 2px 2px .5px 0 #ddd;
+    font-size: .8em;
+    font-style: italic;
+    margin: 0px 0px 0px 2px;
 }
 
 
 hr {
-    height: 1px;
-    border: none;
-    border-bottom: 1px solid $shadow_color;
-    margin: 0.5em 0;
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji";
+    border-color: transparent;
+}
+
+
+hr::before {
+    content: "＊＊＊";
+    font-weight: bold;
+    text-align: center;
+    display: inherit;
+    letter-spacing: 4px;
+    font-size: 1.5rem;
 }
 
 del {

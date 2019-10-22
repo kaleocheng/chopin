@@ -1,12 +1,10 @@
 
+<footer>
+    <hr>
+</footer>
 {{ if .Site.BuildDrafts }}
     {{ if eq .Page.Type "plan" }}
         <script src="{{ .Site.BaseURL }}/js/highlight-at.js"></script>
         <script type="text/javascript">highlight('@')</script>
     {{ end }}
-{{ else }}
-<footer>
-    <p> {{ .Site.Copyright }} <a href="{{ .Site.Params.github }}">Github</a>
-    </p>
-</footer>
 {{ end }}
