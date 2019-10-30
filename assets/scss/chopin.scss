@@ -279,8 +279,8 @@ del {
 
     article {
         a {
-            color: #000;
-            border-bottom: 1.5px solid #000;
+            color: $body_color;
+            border-bottom: 1.5px solid $body_color;
             &:hover {
                 text-decoration: none;
             }
@@ -420,6 +420,10 @@ del {
             
             .task-list-item-done {
                 color: $blockquote_color;
+                a {
+                    color: $blockquote_color;
+                    border-color: $blockquote_color;
+                }
             }
 
             h1 {
