@@ -1,4 +1,4 @@
-$bg_color: #f8f8f5;
+$bg_color: #fffff0;
 $body_color: #515256;
 $logo_link_color: #cd5c5c;
 $link_color: #cc6666; 
@@ -75,6 +75,19 @@ del {
     background-color: $highlight_color;
     border-radius: 3px;
     color: $dark_shadow_color;
+}
+
+.rss {
+    float: left;
+    padding-top: 2px;
+    padding-left: 5px;
+    width: 0.8em;
+    .rss-icon {
+        fill: $body_color;
+    }
+    .rss-icon:hover {
+        fill: $logo_link_color;
+    }
 }
 
 /*-------------------------*/
