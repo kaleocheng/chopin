@@ -536,6 +536,11 @@ del {
                 }
 
             }
+            .flex-table {
+                table {
+                    display: table;
+                }
+            }
 
             table {
                 border-collapse: collapse;
