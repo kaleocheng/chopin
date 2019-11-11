@@ -567,13 +567,16 @@ del {
 
             table {
                 border-collapse: collapse;
-                display: block;
-                overflow-x: auto;
+                //display: block;
+                //overflow-x: auto;
                 border-style: hidden;
                 width:100%;
                 color: #515256;
                 margin-bottom: 2em;
-                white-space: nowrap;
+                //white-space: nowrap;
+                overflow-wrap: break-word;
+                max-width: 100%;
+                table-layout: fixed;
                 thead {
                     background-color: #fdf6e3;
                     tr {
