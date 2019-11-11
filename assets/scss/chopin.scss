@@ -386,6 +386,10 @@ del {
                 font-size: 1.5em;
             }
 
+            #tableofcontents {
+                margin-bottom: 1em;
+            }
+
             #tableofcontents a {
                 color: $dark_shadow_color;
                 border-bottom: 1.5px solid $dark_shadow_color;
