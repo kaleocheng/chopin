@@ -1,17 +1,7 @@
 <a id="posts{{ .Get 0 }}" href={{ .Site.BaseURL }}/{{ .Get 0 }}>{{ .Get 0 }}</a>
 
 <script>
-var getTitle = (url) => {
-return fetch(url)
-  .then((response) => response.text())
-  .then((html) => {
-    const doc = new DOMParser().parseFromString(html, "text/html")
-    const title = doc.querySelectorAll('title')[0]
-    return title.innerText
-  })
-}
-
 getTitle("{{ .Site.BaseURL }}/{{ .Get 0 }}").then((title) => {
-  document.getElementById("posts{{ .Get 0 }}").innerHTML = title
+    document.getElementById("posts{{ .Get 0 }}").innerHTML = title
 })
 </script>
