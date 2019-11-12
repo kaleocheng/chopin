@@ -8,6 +8,9 @@ function docReady(fn) {
     }
 }
 
+function getAnchor(url) {
+    return (url.split('#').length > 1) ? url.split('#')[1] : null;
+}
 
 function getTitle(url){
     return fetch(url)
@@ -19,18 +22,23 @@ function getTitle(url){
     })
 }
 
-function shortenGithubURL(links){
+function shortenURL(links){
     links = Array.from(links)
     links.forEach(link => {
         if (link.hostname == 'github.com'){
+            const anchor = getAnchor(link.href)
             const pathName = link.pathname
                                  .slice(1)
                                  .replace('/pull/', '#')
                                  .replace('/issues/', '#')
+                                 .replace(/^(Wiredcraft\/)/,'')
             link.innerHTML = pathName
+            if (anchor) {
+                link.innerText += ' (comment)'
+            }
         }
     })
 }
 docReady(function() {
-    shortenGithubURL(document.links)
+    shortenURL(document.links)
 })
