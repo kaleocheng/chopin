@@ -68,6 +68,7 @@ hr::before {
 }
 
 del {
+    filter: blur(1.5px);
     color: $blockquote_color;
 }
 
@@ -310,6 +311,9 @@ del {
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+        .blur {
+            color: $blockquote_color;
+            filter: blur(2.5px);
         }
         .references {
             color: #93735c;
@@ -464,6 +468,7 @@ del {
             
             .task-list-item-done {
                 color: $blockquote_color;
+                filter: blur(1.5px);
                 a {
                     color: $blockquote_color;
                     border-color: $blockquote_color;
