@@ -70,6 +70,9 @@ hr::before {
 del {
     filter: blur(1.5px);
     color: $blockquote_color;
+    .highlight-at {
+        background-color: $bg_color;
+    }
 }
 
 .highlight-at {
@@ -470,6 +473,9 @@ del {
             .task-list-item-done {
                 color: $blockquote_color;
                 filter: blur(1.5px);
+                .highlight-at {
+                    background-color: $bg_color;
+                }
                 a {
                     color: $blockquote_color;
                     border-color: $blockquote_color;
