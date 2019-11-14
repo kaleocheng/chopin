@@ -19,6 +19,8 @@ body {
     line-height: 1.5em;
     background: $bg_color;
     color: $body_color;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 ::selection {
