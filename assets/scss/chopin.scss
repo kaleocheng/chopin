@@ -275,6 +275,13 @@ del {
         p {
             margin-top: 1em;
 
+            a {
+                border-bottom: 1.5px solid $body_color;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
             span {
                 float: left;
                 font-family: monospace;
@@ -283,6 +290,10 @@ del {
 
             &.draft {
                 color: $shadow_color;
+                a {
+                    color: $shadow_color;
+                    border-color: $shadow_color;
+                }
                 span::before {
                     content: "[";
                 }

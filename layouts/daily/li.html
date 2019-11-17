@@ -1,5 +1,0 @@
-<p {{ with .Draft }} class="draft" {{ end }}>
-    <span>{{ .Date | dateFormat "Jan 2 2006" }}</span>
-    <br />
-    {{ .Summary | plainify | safeHTML | truncate 500 }}
-</p>
