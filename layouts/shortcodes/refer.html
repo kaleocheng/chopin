@@ -1,1 +1,12 @@
-<a class="references" href="{{ .Get 1 }}">{{ .Get 0 }}</a>
+{{ if len .Params | eq 2 }}
+    <a class="references" href="{{ .Get 1 }}">{{ .Get 0 }}</a>
+{{ else }}
+    {{ $url := .Get 0 }}
+    {{ $encodeURL := strings.TrimPrefix "=" (querify "" $url) }}
+    <a class="references" id="{{ $encodeURL }}" href="{{ $url }}"> {{ $url }}</a>
+    <script>
+    getTitle("{{ $url }}").then((title) => {
+        document.getElementById("{{ $encodeURL }}").innerHTML = title
+    })
+    </script>
+{{ end }}
