@@ -5,5 +5,10 @@ function blurFinishedTitles() {
         if (t.nextElementSibling.querySelectorAll(".task-list-item").length == 0){
             t.className = 'blur'
         }
+        t.nextElementSibling.className = 'without-bullets'
     })
+}
+
+function improvePlan(){
+    blurFinishedTitles()
 }

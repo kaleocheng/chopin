@@ -21,7 +21,7 @@
                         </div>
                     </aside>
                 {{ end }}
-                <div class="content">{{ replaceRE  "<label><input type=\"checkbox\" disabled class=\"task-list-item\">" "<label class=\"task-list-item\">" .Content | replaceRE "<label><input type=\"checkbox\" checked disabled class=\"task-list-item\">" "<label class=\"task-list-item-done\">" | safeHTML }} </div>
+                <div class="content">{{ replaceRE  "<input disabled=\"\" type=\"checkbox\">" "<label class=\"task-list-item\">" .Content | replaceRE "<input checked=\"\" disabled=\"\" type=\"checkbox\">" "<label class=\"task-list-item-done\">" | safeHTML }} </div>
             </article>
         </div>
         {{partial "footer.html" .}}

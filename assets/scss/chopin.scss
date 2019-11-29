@@ -516,6 +516,10 @@ del {
                 font-size: 1em;
             }
 
+            .without-bullets {
+                list-style-type:none;
+            }
+
             ul {
                 list-style-position: inside;
                 padding-left: 2em;
