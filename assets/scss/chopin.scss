@@ -522,11 +522,15 @@ del {
 
             ul {
                 list-style-position: inside;
+                list-style-type: none;
                 padding-left: 2em;
                 padding-top: 0.75em;
                 padding-bottom: 0.75em;
 
                 li {
+                    &::before {
+                       content: "- ";
+                    }
                     p {
                         text-indent: 0px;
                     }
