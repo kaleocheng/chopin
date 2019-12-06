@@ -54,6 +54,9 @@ function toggleHighlight(e) {
     link.innerHTML = "less&nbsp;"
     div.style.maxHeight = ""
     div.style.overflow = "none"
+    div.querySelectorAll('pre').forEach(pre => {
+        pre.style.filter = ''
+    })
     highlightDiv.style.bottom = "15px"
   }
   else {
@@ -61,6 +64,9 @@ function toggleHighlight(e) {
     div.style.maxHeight = `${height}px`
     div.style.overflow = "hidden"
     div.scrollIntoView({ behavior: 'smooth' })
+    div.querySelectorAll('pre').forEach(pre => {
+        pre.style.filter = 'blur(0.8px)'
+    })
     highlightDiv.style.bottom = "0"
   }
 }
@@ -69,15 +75,22 @@ function makeCollapsible() {
   const height = 250
   const divs = document.querySelectorAll('.highlight')
   divs.forEach(div => {
+      div.querySelectorAll('pre').forEach(pre => {
+          pre.style.backgroundColor = ''
+      })
       if (div.offsetHeight > height) {
+            div.querySelectorAll('pre').forEach(pre => {
+                pre.style.filter = 'blur(0.8px)'
+            })
             div.style.maxHeight = `${height}px`
             div.style.overflow = "hidden"
 
             let e = document.createElement('div')
             e.className = "highlight-link"
             e.innerHTML = '<a href="">more&nbsp;</a>'
-            div.appendChild(e);
+            div.appendChild(e)
       }
+
   })
 
   const links = document.querySelectorAll('.highlight-link')

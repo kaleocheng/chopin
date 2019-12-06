@@ -391,6 +391,7 @@ del {
 
         .highlight {
             position: relative;
+            margin-bottom: 1em;
         }
 
         .highlight-link {
@@ -398,7 +399,7 @@ del {
             bottom: 0;
             right: 0;
             a {
-                color: #b3d6ef;
+                color: #3aa6dd;
                 border: none;
             }
         }
@@ -583,10 +584,8 @@ del {
                 padding-left: 2em;
                 padding-top: 0.75em;
                 padding-bottom: 0.75em;
-                margin-top: 0.8em;
-                margin-bottom: 0.8em;
-                border: 1px solid #ccc;
-                border-radius: 5px;
+                //border: 1px solid #ffffff;
+                //border-radius: 5px;
 
                 code {
                     font-family: "Fire Code", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
