@@ -389,6 +389,20 @@ del {
             }
         }
 
+        .highlight {
+            position: relative;
+        }
+
+        .highlight-link {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            a {
+                color: #b3d6ef;
+                border: none;
+            }
+        }
+
         header {
             padding-top: 50px;
             padding-bottom: 30px;

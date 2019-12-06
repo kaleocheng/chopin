@@ -42,6 +42,51 @@ function shortenURL(links){
         }
     })
 }
+
+function toggleHighlight(e) {
+  const height = 250
+  e.preventDefault()
+  let link = e.target
+  let div = link.parentElement.parentElement
+  let highlightDiv = link.parentElement
+
+  if (link.innerHTML == "more&nbsp;") {
+    link.innerHTML = "less&nbsp;"
+    div.style.maxHeight = ""
+    div.style.overflow = "none"
+    highlightDiv.style.bottom = "15px"
+  }
+  else {
+    link.innerHTML = "more&nbsp;"
+    div.style.maxHeight = `${height}px`
+    div.style.overflow = "hidden"
+    div.scrollIntoView({ behavior: 'smooth' })
+    highlightDiv.style.bottom = "0"
+  }
+}
+
+function makeCollapsible() {
+  const height = 250
+  const divs = document.querySelectorAll('.highlight')
+  divs.forEach(div => {
+      if (div.offsetHeight > height) {
+            div.style.maxHeight = `${height}px`
+            div.style.overflow = "hidden"
+
+            let e = document.createElement('div')
+            e.className = "highlight-link"
+            e.innerHTML = '<a href="">more&nbsp;</a>'
+            div.appendChild(e);
+      }
+  })
+
+  const links = document.querySelectorAll('.highlight-link')
+  links.forEach(link => {
+        link.addEventListener('click', toggleHighlight)
+    })
+}
+
 docReady(function() {
+    makeCollapsible()
     shortenURL(document.links)
 })
