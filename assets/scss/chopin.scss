@@ -1,11 +1,13 @@
 $bg_color: #fffff0;
 $body_color: #515256;
-$logo_link_color: #cd5c5c;
-$link_color: #cc6666; 
+
+$help_link_color: #3aa6dd;
+$nav_link_color: #cd5c5c;
+
+$table_header_color: #fdf6e3;
+$border_color: #dddddd;
 $shadow_color: #999999;
-$blockquote_color: #a5a4a4;
 $highlight_color: #ecbeb3;
-$dark_shadow_color: #47484b;
 $body_font: "Fira Code", "Lucida Console", Monaco, Consolas, monospace, "SimSun", "adelle", "Georgia", serif;
 
 * {
@@ -24,17 +26,17 @@ body {
 }
 
 ::selection {
-    background: black;
-    color: white;
+    background: $body_color;
+    color: $bg_color;
 }
 
 ::-moz-selection {
-    background: black;
-    color: white;
+    background: $body_color;
+    color: $bg_color;
 }
 
 a {
-    color: $link_color;
+    color: $nav_link_color;
     text-decoration: none;
 
     &:hover {
@@ -43,10 +45,10 @@ a {
 }
 
 kbd {
-    border: 1px solid #666;
+    border: 1px solid $body_color;
     padding: 0 2px;
     border-radius: 2px;
-    box-shadow: 2px 2px .5px 0 #ddd;
+    box-shadow: 2px 2px .5px 0 $border_color;
     font-size: .8em;
     font-style: italic;
     margin: 0px 0px 0px 2px;
@@ -71,7 +73,7 @@ hr::before {
 
 del {
     filter: blur(1.5px);
-    color: $blockquote_color;
+    color: $shadow_color;
     .highlight-at {
         background-color: $bg_color;
     }
@@ -80,7 +82,7 @@ del {
 .highlight-at {
     background-color: $highlight_color;
     border-radius: 3px;
-    color: $dark_shadow_color;
+    color: $body_color;
 }
 
 .rss {
@@ -92,7 +94,7 @@ del {
         fill: $body_color;
     }
     .rss-icon:hover {
-        fill: $logo_link_color;
+        fill: $nav_link_color;
     }
 }
 
@@ -119,11 +121,11 @@ del {
     padding: 40px 0;
 
     a {
-        color: black;
+        color: $body_color;
         transition: color linear .2s;
 
         &:hover {
-            color: $logo_link_color;
+            color: $nav_link_color;
             text-decoration: none;
         }
     }
@@ -145,7 +147,7 @@ del {
                     background: url("https://png.icons8.com/search") no-repeat;
                     background-size: 1rem 1rem;
                     border: none;
-                    border-bottom: 1px solid #000000;
+                    border-bottom: 1px solid $body_color;
                     box-shadow: none;
                     outline: none;
                     font-size: 0.8em;
@@ -238,17 +240,17 @@ del {
 
     .articles {
         a {
-            color: #47484b;
+            color: $body_color;
         }
 
         h2 {
-            color: #47484b;
+            color: $body_color;
             margin-top: 2em;
             font-weight: normal;
             font-size: 1.35em;
 
             span {
-                color: black;
+                color: $body_color;
                 float: right;
                 font-family: monospace;
                 font-size: 0.8em;
@@ -264,6 +266,9 @@ del {
                 }
                 a::after {
                     content: "]";
+                }
+                span {
+                    color: $shadow_color;
                 }
             }
  
@@ -329,13 +334,13 @@ del {
             user-select: none;
         }
         .blur {
-            color: $blockquote_color;
+            color: $shadow_color;
             filter: blur(2.5px);
         }
         .references {
-            color: #93735c;
+            color: $bg_color;
             display: block;
-            background: #fcf1d8;
+            background: $body_color;
             padding: 1em 1em 1em 1em;
             border-radius: 5px;
             border-bottom: 0px;
@@ -352,9 +357,9 @@ del {
         }
 
         .books {
-            color: #ffffff;
+            color: $bg_color;
             display: block;
-            background: #4BB8DD;
+            background: $body_color;
             padding: 1em 1em 1em 1em;
             border-radius: 5px;
             border-bottom: 0px;
@@ -371,9 +376,9 @@ del {
         }
 
         .resource {
-            color: $dark_shadow_color;
+            color: $bg_color;
             display: block;
-            background: #bdd2ba;
+            background: $body_color;
             padding: 1em 1em 1em 1em;
             border-radius: 5px;
             border-bottom: 0px;
@@ -399,7 +404,7 @@ del {
             bottom: 0;
             right: 0;
             a {
-                color: #3aa6dd;
+                color: $help_link_color;
                 border: none;
             }
         }
@@ -435,8 +440,8 @@ del {
             }
 
             #tableofcontents a {
-                color: $dark_shadow_color;
-                border-bottom: 1.5px solid $dark_shadow_color;
+                color: $body_color;
+                border-bottom: 1.5px solid $body_color;
             }
 
             #tableofcontents nav ul li {
@@ -456,7 +461,7 @@ del {
                 .ais-hits {
                     .ais-hits--item {
                         a {
-                            color: #47484b;
+                            color: $body_color;
                         }
 
                         h2 {
@@ -499,14 +504,14 @@ del {
             }
             
             .task-list-item-done {
-                color: $blockquote_color;
+                color: $shadow_color;
                 filter: blur(1.5px);
                 .highlight-at {
                     background-color: $bg_color;
                 }
                 a {
-                    color: $blockquote_color;
-                    border-color: $blockquote_color;
+                    color: $shadow_color;
+                    border-color: $shadow_color;
                 }
             }
 
@@ -569,10 +574,13 @@ del {
                 padding-top: 0.75em;
                 padding-bottom: 0.75em;
                 padding-left: 2em;
-                color: $blockquote_color;
+                color: $shadow_color;
+                strong {
+                    color: $body_color;
+                }
                 a {
-                    color: $blockquote_color;
-                    border-color: $blockquote_color;
+                    color: $shadow_color;
+                    border-color: $shadow_color;
                 }
             }
 
@@ -584,8 +592,6 @@ del {
                 padding-left: 2em;
                 padding-top: 0.75em;
                 padding-bottom: 0.75em;
-                //border: 1px solid #ffffff;
-                //border-radius: 5px;
 
                 code {
                     font-family: "Fire Code", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
@@ -625,14 +631,14 @@ del {
                 //overflow-x: auto;
                 border-style: hidden;
                 width:100%;
-                color: #515256;
+                color: $body_color;
                 margin-bottom: 2em;
                 //white-space: nowrap;
                 overflow-wrap: break-word;
                 max-width: 100%;
                 table-layout: fixed;
                 thead {
-                    background-color: #fdf6e3;
+                    background-color: $table_header_color;
                     tr {
                         font-size:1.1em;
                         text-align:left;
@@ -641,7 +647,7 @@ del {
                     }
                     th {
                         padding: 10px;
-                        border: 1px solid #dddddd;
+                        border: 1px solid $border_color;
                         border-top: 0;
                     }
                 }
@@ -656,7 +662,7 @@ del {
                     }
                     td {
                         vertical-align: top;
-                        border: 1px solid #dddddd;
+                        border: 1px solid $border_color;
                         text-align: left;
                         padding: 0.2em 0.5em 0.2em 0.5em;
                     }
@@ -703,7 +709,7 @@ del {
     text-align: center;
 
     a {
-        color: #47484b;
+        color: $body_color;
     }
 
     .prev {
