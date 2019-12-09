@@ -79,10 +79,10 @@ del {
     }
 }
 
-.highlight-at {
-    background-color: $highlight_color;
+.at {
+    background-color: $body_color;
     border-radius: 3px;
-    color: $body_color;
+    color: $bg_color;
 }
 
 .rss {
