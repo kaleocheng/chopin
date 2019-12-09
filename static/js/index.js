@@ -25,19 +25,26 @@ function getTitle(url){
     })
 }
 
+function isNumeric(num){
+  return !isNaN(num)
+}
+
 function shortenURL(links){
     links = Array.from(links)
     links.forEach(link => {
         if (link.hostname == 'github.com'){
-            const anchor = getAnchor(link.href)
-            const pathName = link.pathname
-                                 .slice(1)
-                                 .replace('/pull/', '#')
-                                 .replace('/issues/', '#')
-                                 .replace(/^(Wiredcraft\/)/,'')
-            link.innerHTML = pathName
-            if (anchor) {
-                link.innerText += ' (comment)'
+            const pathArray = link.pathname.slice(1).split('/')
+            const user = pathArray[0]
+            const repo = pathArray[1]
+            const lastPath = pathArray[pathArray.length -1]
+            if (pathArray.length == 2) {
+                link.innerHTML = repo
+            } else if (lastPath.length == 40){
+                link.innerHTML = `${repo}@${lastPath.slice(0,5)}`
+            } else if (isNumeric(lastPath)){
+                link.innerHTML = `${repo}#${lastPath}`
+            } else {
+                link.innerHTML = `${repo}/.../${lastPath}`
             }
         }
     })
