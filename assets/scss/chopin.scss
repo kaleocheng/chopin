@@ -506,9 +506,6 @@ del {
             .task-list-item-done {
                 color: $shadow_color;
                 filter: blur(1.5px);
-                .highlight-at {
-                    background-color: $bg_color;
-                }
                 a {
                     color: $shadow_color;
                     border-color: $shadow_color;
