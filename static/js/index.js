@@ -29,6 +29,15 @@ function isNumeric(num){
   return !isNaN(num)
 }
 
+function isValidUrl(string){
+  try {
+    new URL(string);
+    return true;
+  } catch (_) {
+    return false;
+  }
+}
+
 function shortenURL(links){
     links = Array.from(links)
     links.forEach(link => {
@@ -46,6 +55,20 @@ function shortenURL(links){
             } else {
                 link.innerHTML = `${repo}/.../${lastPath}`
             }
+            return
+        }
+
+        if(isValidUrl(link.innerHTML)){
+            const url = new URL(link.innerHTML)
+            link.innerHTML = url.hostname.replace(/^www\./, "")
+            let after = url.pathname + url.search + url.hash
+            after = after.split(".html")[0].replace(/\/$/, "")
+            if (after.length > 30) {
+                after = after.split('/').pop()
+                link.innerHTML += `/${after}`
+                return
+            }
+            link.innerHTML += after
         }
     })
 }
