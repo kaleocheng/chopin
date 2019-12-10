@@ -5,7 +5,7 @@
 <body>
     <div class="center-container">
         {{ if not (in .Params.tags "clean") }}
-            {{partial "header.html" .}}
+        {{partial "header.html" .}}
         {{ end }}
         <div class="main">
             <article>
@@ -16,14 +16,14 @@
                         {{ .Date | dateFormat "Jan 2, 2006" }}
                     </span>
                 </header>
-                {{ end }}
-                {{ if or (and (gt .WordCount 350) (gt (.TableOfContents | countwords) 10)) (in .Params.tags "toc")}}
+                    {{ if or (and (gt .WordCount 350) (gt (.TableOfContents | countwords) 10)) (in .Params.tags "toc")}}
                     <aside>
                         <h1 id="list-of-contents">List of Contents</h1>
                         <div id="tableofcontents">
                             {{.TableOfContents}}
                         </div>
                     </aside>
+                    {{ end }}
                 {{ end }}
                 <div class="content">{{ replaceRE  "<input disabled=\"\" type=\"checkbox\">" "<label class=\"task-list-item\">" .Content | replaceRE "<input checked=\"\" disabled=\"\" type=\"checkbox\">" "<label class=\"task-list-item-done\">" | safeHTML }} </div>
             </article>
