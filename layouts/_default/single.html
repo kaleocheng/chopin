@@ -4,15 +4,19 @@
 
 <body>
     <div class="center-container">
-        {{partial "header.html" .}}
+        {{ if not (in .Params.tags "clean") }}
+            {{partial "header.html" .}}
+        {{ end }}
         <div class="main">
             <article>
+                {{ if not (in .Params.tags "clean") }}
                 <header>
                     <h1>{{ with .Draft }}[{{ end }}{{ .Title }}{{ with .Draft }}]{{ end }}</h1>
                     <span> <i class="icon-time"></i>
                         {{ .Date | dateFormat "Jan 2, 2006" }}
                     </span>
                 </header>
+                {{ end }}
                 {{ if or (and (gt .WordCount 350) (gt (.TableOfContents | countwords) 10)) (in .Params.tags "toc")}}
                     <aside>
                         <h1 id="list-of-contents">List of Contents</h1>
