@@ -8,23 +8,6 @@ function docReady(fn) {
     }
 }
 
-function getAnchor(url) {
-    return (url.split('#').length > 1) ? url.split('#')[1] : null;
-}
-
-function getTitle(url){
-    return fetch(url)
-      .then((response) => response.text())
-      .then((html) => {
-        const doc = new DOMParser().parseFromString(html, 'text/html')
-        const title = doc.querySelectorAll('title')[0]
-          if (title.innerText.length > 50 ){
-              return title.innerText.slice(0, 50) + '...'
-          }
-        return title.innerText
-    })
-}
-
 function isNumeric(num){
   return !isNaN(num)
 }

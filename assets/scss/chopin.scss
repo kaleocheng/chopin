@@ -74,8 +74,8 @@ hr::before {
 del {
     filter: blur(1.5px);
     color: $shadow_color;
-    .highlight-at {
-        background-color: $bg_color;
+    .at {
+        background-color: $shadow_color;
     }
 }
 
@@ -509,6 +509,29 @@ del {
                 a {
                     color: $shadow_color;
                     border-color: $shadow_color;
+                }
+
+                .at {
+                    background-color: $shadow_color;
+                }
+            }
+
+            .task-list-shadow {
+                label {
+                    a {
+                        border: none;
+                        color: $help_link_color;
+                        &::before {
+                            content: "➙ ";
+                        }
+                    }
+                    .at {
+                        background-color: $bg_color;
+                        color: $shadow_color;
+                    }
+                    color: $shadow_color;
+                    border-radius: 5px;
+                    border-bottom: 2px dotted;
                 }
             }
 
