@@ -8,6 +8,7 @@ $table_header_color: #fdf6e3;
 $border_color: #dddddd;
 $shadow_color: #999999;
 $highlight_color: #ecbeb3;
+$code_color: #000000;
 $body_font: "Fira Code", "Lucida Console", Monaco, Consolas, monospace, "SimSun", "adelle", "Georgia", serif;
 
 * {
@@ -77,6 +78,13 @@ del {
     .at {
         background-color: $shadow_color;
     }
+}
+
+code {
+    font-family: "Fira Code", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    font-size: 80%;
+    color: $code_color;
+    white-space: pre-wrap;
 }
 
 .at {
@@ -609,18 +617,6 @@ del {
                 padding-left: 2em;
                 padding-top: 0.75em;
                 padding-bottom: 0.75em;
-
-                code {
-                    font-family: "Fire Code", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-                    font-size: 80%;
-                    white-space: pre-wrap;
-                }
-            }
-
-            code {
-                font-family: "Fira Code", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-                font-size: 80%;
-                white-space: pre-wrap;
             }
 
             p {

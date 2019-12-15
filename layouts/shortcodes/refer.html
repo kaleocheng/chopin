@@ -1,5 +1,0 @@
-{{ if len .Params | eq 2 }}
-    <a class="references" href="{{ .Get 1 }}">{{ .Get 0 }}</a>
-{{ else }}
-    <a class="references" href="{{ .Get 0 }}"> {{ .Get 0 }}</a>
-{{ end }}
