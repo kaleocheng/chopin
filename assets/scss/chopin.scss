@@ -526,11 +526,11 @@ code {
 
             .task-list-shadow {
                 label {
-                    a {
+                    .date-refer {
                         border: none;
                         color: $help_link_color;
                         &::before {
-                            content: "➙ ";
+                            content: " ➙ ";
                         }
                     }
                     .at {

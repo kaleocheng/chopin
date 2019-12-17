@@ -19,14 +19,15 @@ function handleDate(){
     tasks.forEach(task => {
         const current = task.parentNode.parentNode.parentNode.previousElementSibling.id
         const currentLink = (current) => {
-            let link = document.createElement('A');
-            link.setAttribute('href', `#${current}`);
+            let link = document.createElement('A')
+            link.setAttribute('href', `#${current}`)
+            link.className = 'date-refer'
             link.innerHTML = current
             return link
         }
         const createLi = (current, task) => {
             const li = document.createElement('LI')
-            li.className = "task-list-shadow"
+            li.className = 'task-list-shadow'
             const label = task.parentNode.cloneNode(true)
             label.appendChild(currentLink(current))
             li.appendChild(label)
