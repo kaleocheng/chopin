@@ -106,6 +106,13 @@ code {
     }
 }
 
+.date-refer {
+    border: none !important;
+    color: $help_link_color !important;
+    &::before {
+        content: " ➙ " !important;
+    }
+}
 /*-------------------------*/
 
 /*----- center container --*/
@@ -526,13 +533,6 @@ code {
 
             .task-list-shadow {
                 label {
-                    .date-refer {
-                        border: none;
-                        color: $help_link_color;
-                        &::before {
-                            content: " ➙ ";
-                        }
-                    }
                     .at {
                         background-color: $bg_color;
                         color: $shadow_color;

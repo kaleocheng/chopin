@@ -17,7 +17,11 @@ function handleDate(){
     const tasks = Array.from(document.getElementsByClassName('date'))
     const year = new Date().getFullYear()
     tasks.forEach(task => {
-        const current = task.parentNode.parentNode.parentNode.previousElementSibling.id
+        let parentElement = task.parentNode.parentNode
+        if (parentElement.tagName == 'DEL') {
+            parentElement = parentElement.parentNode
+        }
+        const current = parentElement.parentNode.previousElementSibling.id
         const currentLink = (current) => {
             let link = document.createElement('A')
             link.setAttribute('href', `#${current}`)
@@ -28,7 +32,10 @@ function handleDate(){
         const createLi = (current, task) => {
             const li = document.createElement('LI')
             li.className = 'task-list-shadow'
-            const label = task.parentNode.cloneNode(true)
+            let label = task.parentNode.cloneNode(true)
+            if (task.parentNode.parentNode.tagName == 'DEL'){
+                label = task.parentNode.parentNode.cloneNode(true)
+            }
             label.appendChild(currentLink(current))
             li.appendChild(label)
             return li
