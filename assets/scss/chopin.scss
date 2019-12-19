@@ -598,10 +598,17 @@ code {
             blockquote {
                 padding-top: 0.75em;
                 padding-bottom: 0.75em;
-                padding-left: 2em;
+                padding-left: 1.6em;
                 color: $shadow_color;
                 strong {
                     color: $body_color;
+                }
+                p {
+                  &::before {
+                      content: '＊';
+                      font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji";
+                      font-weight: bold;
+                  }
                 }
                 a {
                     color: $shadow_color;
