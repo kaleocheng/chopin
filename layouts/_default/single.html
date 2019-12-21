@@ -25,7 +25,8 @@
                     </aside>
                     {{ end }}
                 {{ end }}
-                <div class="content">{{ .Content | safeHTML }} </div>
+                <!--<div class="content">{{ .Content | safeHTML }} </div>-->
+                <div class="content">{{ partial "header-anchor.html" .Content }}</div>
             </article>
         </div>
         {{partial "footer.html" .}}
