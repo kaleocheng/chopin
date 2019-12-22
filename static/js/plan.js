@@ -53,7 +53,7 @@ function handleDate(){
             } else {
                 title = document.createElement('H2')
                 title.id = id
-                title.innerHTML = id
+                title.innerHTML = `<a class="anchor" href="#${id}"><span>${id}</span></a>`
                 const ul = document.createElement('UL')
                 ul.setAttribute('class', 'without-bullets')
                 const li = createLi(current, task)
