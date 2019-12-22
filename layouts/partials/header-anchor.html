@@ -1,1 +1,1 @@
-{{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<sup><a class="anchor" style="border: none; font-family: courier; font-style: normal" href="#${2}"><span>¶</span></a></sup> ${3}` | safeHTML }}
+{{ . | replaceRE "<(h[1-9]) id=\"([^\"]+)\"(.*)>(.*)(</h[1-9]+>)" `<${1} id="${2}" ${3}><a class="anchor" href="#${2}"><span>${4}</span></a> ${5}` | safeHTML }}

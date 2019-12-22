@@ -113,6 +113,7 @@ code {
         content: " ➙ " !important;
     }
 }
+
 /*-------------------------*/
 
 /*----- center container --*/
@@ -334,6 +335,9 @@ code {
             &:hover {
                 text-decoration: none;
             }
+        }
+        .anchor {
+            border: none !important;
         }
         .grid-container {
             display: grid;
