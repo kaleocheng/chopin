@@ -155,8 +155,9 @@ code {
 
     .return {
         a {
-            font-size: 1.8em;
-            color: $help_link_color;
+            &::before {
+                content: "↩ "
+            }
         }
     }
 
@@ -439,12 +440,20 @@ code {
         header {
             padding-top: 50px;
             padding-bottom: 30px;
-            text-align: center;
 
+            .draft {
+                color: $shadow_color;
+                &::before {
+                    content: "[";
+                }
+                &::after {
+                    content: "]";
+                }
+
+            }
 
             .tags a {
                 color: $shadow_color;
-                border-color: $shadow_color;
                 border-bottom: none;
                 &:hover {
                     color: $help_link_color;
@@ -452,6 +461,10 @@ code {
                 &::before {
                     content: "#"
                 }
+            }
+
+            .header-date {
+                float: right;
             }
 
             h1 {

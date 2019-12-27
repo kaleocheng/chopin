@@ -6,6 +6,8 @@
     <div class="center-container">
         {{ if eq .Section "archive" }}
         {{partial "header-archive.html" .}}
+        {{ else if eq .Type "tags"}}
+        {{partial "header-tags.html" .}}
         {{ else }}
         {{partial "header.html" .}}
         {{ end }}

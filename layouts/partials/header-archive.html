@@ -1,5 +1,8 @@
 <header class="header">
     <div class="return">
-        <a href="{{ path.Join "/plan/" (path.Base .RelPermalink) }}">↩</a>
+        <a href="{{ path.Join "/plan/" (path.Base .RelPermalink) }}">{{ .Name }}</a>
+    </div>
+    <div class="header-right">
+        <a href="/">{{ .Site.Title }}</a>
     </div>
 </header>

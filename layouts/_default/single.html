@@ -11,10 +11,10 @@
             <article>
                 {{ if not (in .Params.tags "clean") }}
                 <header>
-                    <h1>{{ with .Draft }}[{{ end }}{{ .Title }}{{ with .Draft }}]{{ end }}</h1>
-                    <span>
+                    <span class="header-date">
                         {{ .Date | dateFormat "Jan 2, 2006" }} 
                     </span>
+                    <h1 {{ with .Draft }}class="draft" {{ end }}>{{ .Title }}</h1>
                     <span class="tags">
                     {{ range .Params.tags}}
                     <a href="/tags/{{.}}">{{.}}</a>
