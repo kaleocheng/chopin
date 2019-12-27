@@ -12,8 +12,13 @@
                 {{ if not (in .Params.tags "clean") }}
                 <header>
                     <h1>{{ with .Draft }}[{{ end }}{{ .Title }}{{ with .Draft }}]{{ end }}</h1>
-                    <span> <i class="icon-time"></i>
-                        {{ .Date | dateFormat "Jan 2, 2006" }}
+                    <span>
+                        {{ .Date | dateFormat "Jan 2, 2006" }} 
+                    </span>
+                    <span class="tags">
+                    {{ range .Params.tags}}
+                    <a href="/tags/{{.}}">{{.}}</a>
+                    {{ end }}
                     </span>
                 </header>
                     {{ if or (and (gt .WordCount 350) (gt (.TableOfContents | countwords) 10)) (in .Params.tags "toc")}}
