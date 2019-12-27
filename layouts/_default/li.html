@@ -7,3 +7,8 @@
     <span
         class="hidde  hidden-when-small display-when-smaller hidden-when-smallest">{{ .Date | dateFormat "Jan" }}</span>
 </h2>
+<span class="tags  {{ with .Draft }}draft{{end}}">
+{{ range .Params.tags}}
+<a href="/tags/{{.}}">{{.}}</a>
+{{ end }}
+</span>

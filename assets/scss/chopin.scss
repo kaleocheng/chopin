@@ -115,6 +115,25 @@ code {
     }
 }
 
+.tags {
+    color: $shadow_color;
+}
+
+.tags a {
+    border-bottom: none !important;
+    &:hover {
+        color: $help_link_color !important;
+        text-decoration: none;
+    }
+    &::before {
+        content: "#" !important;
+    }
+}
+
+.header-date {
+    float: right;
+}
+
 /*-------------------------*/
 
 /*----- center container --*/
@@ -270,7 +289,8 @@ code {
 
         h2 {
             color: $body_color;
-            margin-top: 2em;
+            margin-top: 1.5em;
+            margin-bottom: 0.2em;
             font-weight: normal;
             font-size: 1.35em;
 
@@ -282,23 +302,27 @@ code {
             }
 
             &.draft {
-                color: $shadow_color;
-                a {
-                    color: $shadow_color;
-                }
                 a::before {
                     content: "[";
                 }
                 a::after {
                     content: "]";
                 }
-                span {
-                    color: $shadow_color;
-                }
             }
+
  
             .hidde {
                 display: none;
+            }
+        }
+
+        .draft {
+            color: $shadow_color;
+            a {
+                color: $shadow_color;
+            }
+            span {
+                color: $shadow_color;
             }
         }
 
@@ -452,20 +476,6 @@ code {
 
             }
 
-            .tags a {
-                color: $shadow_color;
-                border-bottom: none;
-                &:hover {
-                    color: $help_link_color;
-                }
-                &::before {
-                    content: "#"
-                }
-            }
-
-            .header-date {
-                float: right;
-            }
 
             h1 {
                 padding-bottom: 20px;
