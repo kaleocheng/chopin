@@ -146,10 +146,17 @@ code {
         }
     }
 
-    #logo {
+    #logo, .return {
         width: 40%;
         float: left;
         font-size: 1.25em;
+    }
+
+    .return {
+        a {
+            font-size: 1.8em;
+            color: $help_link_color;
+        }
     }
 
     .header-right {
