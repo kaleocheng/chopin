@@ -467,13 +467,6 @@ code {
 
             .draft {
                 color: $shadow_color;
-                &::before {
-                    content: "[";
-                }
-                &::after {
-                    content: "]";
-                }
-
             }
 
 
@@ -482,12 +475,23 @@ code {
                 font-family: $body_font;
                 font-weight: normal;
                 font-size: 1.5em;
+                &.draft {
+                    &::before {
+                        content: "[";
+                    }
+                    &::after {
+                        content: "]";
+                    }
+                }
             }
 
             span {
                 font-family: monospace;
                 color: $shadow_color;
                 font-size: 0.9em;
+                &.draft a {
+                    color: $shadow_color;
+                }
             }
         }
         aside {

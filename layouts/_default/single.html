@@ -15,7 +15,7 @@
                         {{ .Date | dateFormat "Jan 2, 2006" }} 
                     </span>
                     <h1 {{ with .Draft }}class="draft" {{ end }}>{{ .Title }}</h1>
-                    <span class="tags">
+                    <span class="tags {{ with .Draft }}draft{{ end }}">
                     {{ range .Params.tags}}
                     <a href="/tags/{{.}}">{{.}}</a>
                     {{ end }}
