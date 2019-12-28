@@ -5,9 +5,17 @@
 <body>
     <div class="center-container">
         {{partial "header.html" .}}
+
+        {{ $posts := "" }}
+        {{ $section :=  (index .Site.Menus.main 0).Identifier }}
+        {{ if isset .Site.Params.nav $section}}
+            {{ $posts =  where .Site.RegularPages ".Type" "in" (index .Site.Params.nav $section)}}
+        {{ else }}
+            {{ $posts =  where .Site.RegularPages ".Type" "eq" $section}}
+        {{ end }}
         <div class="main">
             <div class="articles">
-                {{ $paginator := .Paginate (where .Site.RegularPages "Type" "eq" (index .Site.Menus.main 0).Identifier) }}
+                {{ $paginator := .Paginate $posts }}
                 {{ range $paginator.Pages }}
                 {{ .Render "li" }}
                 {{ end }}

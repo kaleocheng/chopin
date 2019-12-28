@@ -11,9 +11,14 @@
         {{ else }}
         {{partial "header.html" .}}
         {{ end }}
+
+        {{ $posts := .Data.Pages }}
+        {{ if isset .Site.Params.nav .Section}}
+        {{ $posts =  where .Site.RegularPages ".Type" "in" (index .Site.Params.nav .Section)}}
+        {{ end }}
         <div class="main">
             <div class="articles">
-                {{ $paginator := .Paginate .Data.Pages }}
+                {{ $paginator := .Paginate $posts }}
                 {{ range $paginator.Pages }}
                 {{ .Render "li" }}
                 {{ end }}
