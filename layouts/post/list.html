@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+{{partial "head.html" .}}
+
+<body>
+    <div class="center-container">
+        {{ if eq .Section "archive" }}
+        {{partial "header-archive.html" .}}
+        {{ else if eq .Type "tags"}}
+        {{partial "header-tags.html" .}}
+        {{ else }}
+        {{partial "header.html" .}}
+        {{ end }}
+        <div class="main">
+            <div class="articles">
+                {{ $posts := where .Site.RegularPages ".Type" "in" (slice "tweet" "posts")}}
+                {{ $paginator := .Paginate ($posts)}}
+                {{ range $paginator.Pages }}
+                {{ .Render "li" }}
+                {{ end }}
+            </div>
+        </div>
+        {{ partial "pagination.html" $paginator }}
+    </div>
+</body>
+
+</html>

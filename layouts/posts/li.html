@@ -1,9 +1,5 @@
 <p {{ with .Draft }} class="draft" {{ end }}>
     <span>{{ .Date | dateFormat "Jan 2 2006" }}</span>
     <br />
-    {{ if in .Params.tags "tweet" }}
-        {{ .Summary | plainify | safeHTML | truncate 500 }}
-    {{ else }}
     {{ .Summary | plainify | safeHTML | truncate 100 }} <a href="{{ .Permalink }}"><{{ .Title }}></a> 
-    {{ end }}
 </p>
