@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+{{partial "head.html" .}}
+
+<body>
+    <div class="center-container">
+        {{ if not (in .Params.tags "clean") }}
+        {{partial "header.html" .}}
+        {{ end }}
+        <div class="main">
+            <article>
+                <div class="content">
+                    <p><a class="references" href="{{ path.Join "/archive/" (path.Base .RelPermalink) }}">RELATED NOTES</a></p>
+                    {{ partial "header-anchor.html" .Content }}
+                </div>
+            </article>
+        </div>
+        {{partial "footer.html" .}}
+    </div>
+</body>
+
+</html>

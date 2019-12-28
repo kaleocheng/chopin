@@ -9,7 +9,7 @@
         </div>
     {{ else }}
         <div class="return">
-            <a href="{{ path.Join "/plan/" (path.Base .RelPermalink) }}">{{ .Name }}</a>
+            <a href="{{ path.Join "/day/" (path.Base .RelPermalink) }}">{{ .Name }}</a>
         </div>
     {{ end }}
     <div class="header-right">
