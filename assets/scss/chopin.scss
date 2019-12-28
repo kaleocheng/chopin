@@ -135,6 +135,15 @@ code {
     float: right;
 }
 
+.public {
+    &::after {
+        content: url("/images/blog.svg");
+        width: 25px;
+        margin-left: 10px;
+        display: inline-block;
+    }
+}
+
 /*-------------------------*/
 
 /*----- center container --*/
@@ -295,6 +304,7 @@ code {
             font-weight: normal;
             font-size: 1.35em;
 
+
             span {
                 color: $body_color;
                 float: right;
@@ -302,28 +312,8 @@ code {
                 font-size: 0.8em;
             }
 
-            &.draft {
-                a::before {
-                    content: "[";
-                }
-                a::after {
-                    content: "]";
-                }
-            }
-
- 
             .hidde {
                 display: none;
-            }
-        }
-
-        .draft {
-            color: $shadow_color;
-            a {
-                color: $shadow_color;
-            }
-            span {
-                color: $shadow_color;
             }
         }
 
@@ -343,19 +333,6 @@ code {
                 font-size: 0.8em;
             }
 
-            &.draft {
-                color: $shadow_color;
-                a {
-                    color: $shadow_color;
-                    border-color: $shadow_color;
-                }
-                span::before {
-                    content: "[";
-                }
-                span::after {
-                    content: "]";
-                }
-            }
             .hidde {
                 display: none;
             }
@@ -466,33 +443,17 @@ code {
             padding-top: 50px;
             padding-bottom: 30px;
 
-            .draft {
-                color: $shadow_color;
-            }
-
-
             h1 {
                 padding-bottom: 20px;
                 font-family: $body_font;
                 font-weight: normal;
                 font-size: 1.5em;
-                &.draft {
-                    &::before {
-                        content: "[";
-                    }
-                    &::after {
-                        content: "]";
-                    }
-                }
             }
 
             span {
                 font-family: monospace;
                 color: $shadow_color;
                 font-size: 0.9em;
-                &.draft a {
-                    color: $shadow_color;
-                }
             }
         }
         aside {

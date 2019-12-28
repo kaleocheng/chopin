@@ -14,8 +14,8 @@
                     <span class="header-date">
                         {{ .Date | dateFormat "Jan 2, 2006" }} 
                     </span>
-                    <h1 {{ with .Draft }}class="draft" {{ end }}>{{ .Title }}</h1>
-                    <span class="tags {{ with .Draft }}draft{{ end }}">
+                    <h1 {{ if and (not .Draft) .Site.BuildDrafts }}class="public"{{end}}>{{ .Title }}</h1>
+                    <span class="tags">
                     {{ range .Params.tags}}
                     <a href="/tags/{{.}}">{{.}}</a>
                     {{ end }}

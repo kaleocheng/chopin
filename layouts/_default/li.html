@@ -1,5 +1,5 @@
-<h2 {{ with .Draft }} class="draft" {{end}}>
-    <a href="{{ .Permalink }}">{{ .Title }}</a>
+<h2>
+    <a href="{{ .Permalink }}" {{ if and (not .Draft) .Site.BuildDrafts }}class="public"{{end}}>{{ .Title }}</a>
     <span
         class="hidden-when-small hidden-when-smaller hidden-when-smallest">{{ .Date | dateFormat "Jan 2, 2006" }}</span>
     <span
@@ -7,7 +7,7 @@
     <span
         class="hidde  hidden-when-small display-when-smaller hidden-when-smallest">{{ .Date | dateFormat "Jan" }}</span>
 </h2>
-<span class="tags  {{ with .Draft }}draft{{end}}">
+<span class="tags">
 {{ range .Params.tags}}
 <a href="/tags/{{.}}">{{.}}</a>
 {{ end }}
