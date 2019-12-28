@@ -179,8 +179,11 @@ code {
 
     .return {
         a {
+            &:hover {
+                color: $help_link_color;
+            }
             &::before {
-                content: "↩ "
+                content: "#"
             }
         }
     }

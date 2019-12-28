@@ -9,9 +9,7 @@
 {{ end }}
 <body>
     <div class="center-container">
-        {{ if eq .Section "archive" }}
-            {{partial "header-archive.html" .}}
-        {{ else if and (in (slice "taxonomy" "taxonomyTerm" "section") .Kind) (not (in $menus .Section))}}
+        {{ if and (in (slice "taxonomy" "taxonomyTerm" "section") .Kind) (not (in $menus .Section))}}
             {{partial "header-tags.html" .}}
         {{ else }}
             {{partial "header.html" .}}

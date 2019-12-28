@@ -3,9 +3,15 @@
 {{ $name = .Type }}
 {{ end }}
 <header class="header">
-    <div id="logo">
-        #{{singularize $name | lower}}
-    </div>
+    {{ if ne .Section "archive" }}
+        <div id="logo">
+            #{{singularize $name | lower}}
+        </div>
+    {{ else }}
+        <div class="return">
+            <a href="{{ path.Join "/plan/" (path.Base .RelPermalink) }}">{{ .Name }}</a>
+        </div>
+    {{ end }}
     <div class="header-right">
         <a href="/">{{ .Site.Title }}</a>
     </div>
