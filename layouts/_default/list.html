@@ -18,9 +18,12 @@
         {{ end }}
 
         {{ $posts := .Data.Pages }}
-        {{ if isset .Site.Params.nav .Section}}
-        {{ $posts =  where .Site.RegularPages ".Type" "in" (index .Site.Params.nav .Section)}}
+        {{ if isset .Site.Params.nav .Section }}
+            {{ $posts =  where .Site.RegularPages ".Type" "in" (index .Site.Params.nav .Section)}}
+        {{ else if eq "public" .Section }}
+            {{ $posts =  where .Site.RegularPages ".Draft" false }}
         {{ end }}
+
         <div class="main">
             <div class="articles">
                 {{ $paginator := .Paginate $posts }}

@@ -1,6 +1,10 @@
+{{ $name := .Name }}
+{{ if eq "" $name }}
+{{ $name = .Type }}
+{{ end }}
 <header class="header">
     <div id="logo">
-        #{{singularize .Name | lower}}
+        #{{singularize $name | lower}}
     </div>
     <div class="header-right">
         <a href="/">{{ .Site.Title }}</a>

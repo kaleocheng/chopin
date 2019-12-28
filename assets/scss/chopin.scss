@@ -7,7 +7,7 @@ $nav_link_color: #cd5c5c;
 $table_header_color: #fdf6e3;
 $border_color: #dddddd;
 $shadow_color: #999999;
-$highlight_color: #ecbeb3;
+$highlight_color: #de5f85;
 $code_color: #000000;
 $body_font: "Fira Code", "Lucida Console", Monaco, Consolas, monospace, "SimSun", "adelle", "Georgia", serif;
 
@@ -135,13 +135,8 @@ code {
     float: right;
 }
 
-.public {
-    &::after {
-        content: url("/images/blog.svg");
-        width: 25px;
-        margin-left: 10px;
-        display: inline-block;
-    }
+.public-tag {
+    color: $highlight_color !important;
 }
 
 /*-------------------------*/
