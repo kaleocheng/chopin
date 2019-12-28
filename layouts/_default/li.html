@@ -11,4 +11,9 @@
 {{ range .Params.tags}}
 <a href="/tags/{{.}}">{{.}}</a>
 {{ end }}
+{{ range .Params.categories}}
+<a href="/categories/{{.}}">{{.}}</a>
+{{ end }}
+
+<a href="/{{.Section}}/">{{.Section}}</a>
 </span>

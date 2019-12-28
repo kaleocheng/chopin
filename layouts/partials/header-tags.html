@@ -1,6 +1,6 @@
 <header class="header">
     <div id="logo">
-        #{{ .Name }}
+        #{{singularize .Name | lower}}
     </div>
     <div class="header-right">
         <a href="/">{{ .Site.Title }}</a>
