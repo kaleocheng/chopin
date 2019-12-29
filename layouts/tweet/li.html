@@ -3,3 +3,6 @@
     <br />
     {{ .Summary | plainify | safeHTML | truncate 500 }}
 </p>
+<span {{ with .Draft }} class="draft" {{ end }}>
+{{ partial "tags.html" . }}
+</span>

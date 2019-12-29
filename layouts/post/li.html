@@ -3,3 +3,6 @@
     <br />
     {{ .Summary | plainify | safeHTML | truncate 100 }} <a href="{{ .Permalink }}"><{{ .Title }}></a> 
 </p>
+<span {{ with .Draft }} class="draft" {{ end }}>
+{{ partial "tags.html" . }}
+</span>

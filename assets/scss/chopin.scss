@@ -139,6 +139,15 @@ code {
     color: $highlight_color !important;
 }
 
+.draft {
+    color: $shadow_color;
+    a {
+        color: $shadow_color !important;
+    }
+    span {
+        color: $shadow_color;
+    }
+}
 /*-------------------------*/
 
 /*----- center container --*/
@@ -330,6 +339,7 @@ code {
                 font-family: monospace;
                 font-size: 0.8em;
             }
+
 
             .hidde {
                 display: none;
