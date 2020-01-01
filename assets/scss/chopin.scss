@@ -88,6 +88,12 @@ code {
     white-space: pre-wrap;
 }
 
+ul {
+    list-style-position: inside;
+    list-style-type: square;
+    padding-left: 2em;
+}
+
 .at {
     background-color: $body_color;
     border-radius: 3px;
@@ -347,7 +353,7 @@ code {
         }
     }
 
-    article {
+    article, .related {
         a {
             color: $body_color;
             border-bottom: 1.5px solid $body_color;

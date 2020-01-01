@@ -28,6 +28,19 @@
                 {{ end }}
                 <div class="content">{{ partial "header-anchor.html" .Content }}</div>
             </article>
+            <hr>
+            {{ $allRelated := getJSON "related.json" }}
+            {{ $current := strings.TrimRight "/" .RelPermalink }}
+            {{ $related := index $allRelated $current }}
+            {{ with $related }}
+            <div class="related">
+                <h4>Related posts:</h4>
+                {{ range $post := $related }}
+                    {{ printf "- @post(\"%s\")" $post | markdownify }}
+                {{ end }}
+            </div>
+            {{ end }}
+
         </div>
         {{partial "footer.html" .}}
     </div>
