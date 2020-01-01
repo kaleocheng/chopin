@@ -48,18 +48,33 @@ a {
 h1,h2,h3,h4,h5 {
     margin: 0 0 10px 0;
     font-weight: bold;
+    &::after {
+        content: "";
+        color: $shadow_color;
+        font-size: 15px;
+        font-weight: normal;
+    }
 }
 
 h1 {
-    font-size: 1.5em;
+    font-size: 1.35em;
+    &::after {
+        content: " h1";
+    }
 }
 
 h2 {
-    font-size: 1.25em;
+    font-size: 1.2em;
+    &::after {
+        content: " h2";
+    }
 }
 
 h3 {
-    font-size: 1.1em;
+    font-size: 1em;
+    &::after {
+        content: " h3";
+    }
 }
 
 h4 {
@@ -323,10 +338,13 @@ ul {
             border: none;
         }
 
-        h2 {
+        h1 {
             margin-top: 1em;
             margin-bottom: 0;
             font-weight: normal;
+            &::after {
+                content: "";
+            }
             span {
                 float: right;
                 font-family: monospace;
@@ -456,9 +474,11 @@ ul {
             padding-bottom: 30px;
 
             h1 {
-                font-family: $body_font;
                 font-weight: normal;
                 font-size: 1.5em;
+                &::after {
+                    content: "";
+                }
             }
 
             span {
@@ -468,30 +488,18 @@ ul {
             }
         }
         aside {
-            h1 {
-                padding-top: 0.75em;
-                padding-bottom: 0.75em;
-                font-weight: bold;
-                font-size: 1.5em;
-            }
-
-            #tableofcontents {
-                margin-bottom: 1em;
-            }
-
-            #tableofcontents a {
-                color: $body_color;
-                border-bottom: 1.5px solid $body_color;
+            margin-bottom: 1em;
+            ul {
+                padding-left: 0;
+                list-style-type: none;
             }
 
             #tableofcontents nav ul li {
                 clear: left;
-                list-style-type: none;
             }
 
             #tableofcontents nav ul li ul li {
-                padding-left: 2em;
-                list-style-type: none;
+                padding-left: 1em;
             }
         }
 
@@ -500,10 +508,6 @@ ul {
             #hits {
                 .ais-hits {
                     .ais-hits--item {
-                        a {
-                            color: $body_color;
-                        }
-
                         h2 {
                             font-weight: normal;
                             font-size: 1.35em;

@@ -19,7 +19,6 @@
                 </header>
                     {{ if or (and (gt .WordCount 350) (gt (.TableOfContents | countwords) 10)) (in .Params.tags "toc")}}
                     <aside>
-                        <h1 id="list-of-contents">List of Contents</h1>
                         <div id="tableofcontents">
                             {{.TableOfContents}}
                         </div>
