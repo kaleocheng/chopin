@@ -78,7 +78,7 @@ function toggleHighlight(e) {
     div.style.overflow = "hidden"
     div.scrollIntoView({ behavior: 'smooth' })
     div.querySelectorAll('pre').forEach(pre => {
-        pre.style.filter = 'blur(0.8px)'
+        pre.style.filter = 'blur(0.8px) grayscale(100%)'
     })
     highlightDiv.style.bottom = "0"
   }
@@ -93,7 +93,7 @@ function makeCollapsible() {
       })
       if (div.offsetHeight > height) {
             div.querySelectorAll('pre').forEach(pre => {
-                pre.style.filter = 'blur(0.8px)'
+                pre.style.filter = 'blur(0.8px) grayscale(100%)'
             })
             div.style.maxHeight = `${height}px`
             div.style.overflow = "hidden"
