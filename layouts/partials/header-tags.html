@@ -3,15 +3,9 @@
 {{ $name = .Type }}
 {{ end }}
 <header class="header">
-    {{ if ne .Section "archive" }}
-        <div id="logo">
-            #{{singularize $name | lower}}
-        </div>
-    {{ else }}
-        <div class="return">
-            <a href="{{ path.Join "/day/" (path.Base .RelPermalink) }}">{{ .Name }}</a>
-        </div>
-    {{ end }}
+   <div id="logo">
+       #{{singularize $name | lower}}
+   </div>
     <div class="header-right">
         <a href="/">{{ .Site.Title }}</a>
     </div>
