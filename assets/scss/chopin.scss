@@ -45,6 +45,27 @@ a {
     }
 }
 
+h1,h2,h3,h4,h5 {
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+h2 {
+    font-size: 1.25em;
+}
+
+h3 {
+    font-size: 1.1em;
+}
+
+h4 {
+    font-size: 1em;
+}
+
 kbd {
     border: 1px solid $body_color;
     padding: 0 2px;
@@ -317,7 +338,7 @@ ul {
         h2 {
             color: $body_color;
             margin-top: 1em;
-            margin-bottom: 0.2em;
+            margin-bottom: 0;
             font-weight: normal;
             font-size: 1.35em;
 
@@ -462,7 +483,6 @@ ul {
             padding-bottom: 30px;
 
             h1 {
-                padding-bottom: 20px;
                 font-family: $body_font;
                 font-weight: normal;
                 font-size: 1.5em;
@@ -575,26 +595,7 @@ ul {
                 }
             }
 
-            h1 {
-                padding-top: 0.75em;
-                padding-bottom: 0.75em;
-                font-weight: bold;
-                font-size: 1.5em;
-            }
 
-            h2 {
-                padding-top: 0.75em;
-                padding-bottom: 0.75em;
-                font-weight: bold;
-                font-size: 1.25em;
-            }
-
-            h3 {
-                padding-top: 0.75em;
-                padding-bottom: 0.75em;
-                font-weight: normal;
-                font-size: 1em;
-            }
 
             .without-bullets {
                 list-style-type:none;
