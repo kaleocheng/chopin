@@ -31,14 +31,23 @@
             <hr>
             {{ $allRelated := getJSON "related.json" }}
             {{ $current := strings.TrimRight "/" .RelPermalink }}
-            {{ $related := index $allRelated $current }}
-            {{ with $related }}
-            <div class="related">
+            {{ $relatedPosts := index $allRelated $current }}
+            {{ $scratch := newScratch }}
+            {{ range $post := $relatedPosts }}
+                {{ with $.Site.GetPage $post }}
+                    {{ if or (not .Draft) (and .Draft .Site.BuildDrafts) }}
+                        {{ $scratch.Add "relatedPosts" (slice $post) }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            {{ $relatedPosts = $scratch.Get "relatedPosts" }}
+            {{ with $relatedPosts }}
+                <div class="related">
                 <h4>Related posts:</h4>
-                {{ range $post := $related }}
+                {{ range $post := $relatedPosts }}
                     {{ printf "- @post(\"%s\")" $post | markdownify }}
                 {{ end }}
-            </div>
+                </div>
             {{ end }}
 
         </div>
