@@ -37,11 +37,11 @@ body {
 }
 
 a {
-    color: $nav_link_color;
+    color: $body_color;
     text-decoration: none;
-
+    border-bottom: 1.5px solid $body_color;
     &:hover {
-        text-decoration: underline;
+        text-decoration: none;
     }
 }
 
@@ -125,6 +125,7 @@ ul {
     float: left;
     padding-top: 2px;
     padding-left: 5px;
+    border: none;
     width: 0.8em;
     .rss-icon {
         fill: $body_color;
@@ -203,6 +204,7 @@ ul {
 
     a {
         color: $body_color;
+        border: none;
         transition: color linear .2s;
 
         &:hover {
@@ -211,27 +213,28 @@ ul {
         }
     }
 
-    #logo, .return {
+    #logo {
         width: 40%;
         float: left;
         font-size: 1.25em;
-    }
-
-    .return {
-        a {
-            &:hover {
-                color: $help_link_color;
-            }
-            &::before {
-                content: "#"
-            }
-        }
     }
 
     .header-right {
         width: 60%;
         float: right;
         text-align: right;
+
+        .active {
+            color: inherit;
+        }
+
+        .active::before {
+            content: "[";
+        }
+
+        .active::after {
+            content: "]";
+        }
 
         #search-box {
             .ais-search-box {
@@ -260,21 +263,6 @@ ul {
                 }
             }
         }
-
-        .active {
-            color: inherit;
-        }
-
-        .active::before {
-            content: "[";
-        }
-
-        .active::after {
-            content: "]";
-        }
-
-        //font-family: monospace;
-
     }
 }
 
@@ -332,21 +320,17 @@ ul {
 
     .articles {
         a {
-            color: $body_color;
+            border: none;
         }
 
         h2 {
-            color: $body_color;
             margin-top: 1em;
             margin-bottom: 0;
             font-weight: normal;
-            font-size: 1.35em;
-
-
             span {
-                color: $body_color;
                 float: right;
                 font-family: monospace;
+                font-weight: normal;
                 font-size: 0.8em;
             }
 
@@ -360,9 +344,6 @@ ul {
 
             a {
                 border-bottom: 1.5px solid $body_color;
-                &:hover {
-                    text-decoration: none;
-                }
             }
 
             span {
@@ -371,21 +352,13 @@ ul {
                 font-size: 0.8em;
             }
 
-
             .hidde {
                 display: none;
             }
         }
     }
 
-    article, .related {
-        a {
-            color: $body_color;
-            border-bottom: 1.5px solid $body_color;
-            &:hover {
-                text-decoration: none;
-            }
-        }
+    article {
         .anchor {
             border: none !important;
         }
@@ -762,7 +735,7 @@ ul {
     text-align: center;
 
     a {
-        color: $body_color;
+        border: none;
     }
 
     .prev {
