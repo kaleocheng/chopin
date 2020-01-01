@@ -1,7 +1,4 @@
-<a id="posts{{ .Get 0 }}" href={{ .Site.BaseURL }}/{{ .Get 0 }}>{{ .Get 0 }}</a>
-
-<script>
-getTitle("{{ .Site.BaseURL }}/{{ .Get 0 }}").then((title) => {
-    document.getElementById("posts{{ .Get 0 }}").innerHTML = title
-})
-</script>
+{{ $post := .Get 0 }}
+{{ with .Site.GetPage $post }}
+    <a href={{ .Site.BaseURL }}/{{ .Permalink }}>{{ .Title }}</a>
+{{ end }}

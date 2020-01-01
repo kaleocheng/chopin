@@ -44,9 +44,13 @@
             {{ with $relatedPosts }}
                 <div class="related">
                 <h4>Related posts:</h4>
+                <ul>
                 {{ range $post := $relatedPosts }}
-                    {{ printf "- @post(\"%s\")" $post | markdownify }}
+                  {{ with $.Site.GetPage $post }}
+                  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                  {{ end }}
                 {{ end }}
+                </ul>
                 </div>
             {{ end }}
 
