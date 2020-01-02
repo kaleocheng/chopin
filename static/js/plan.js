@@ -15,7 +15,7 @@ function removeElements(elms){
 
 function handleDate(){
     const tasks = Array.from(document.getElementsByClassName('date'))
-    const year = new Date().getFullYear()
+    const year = window.location.href.split('day/')[1].replace(/\/$/, '').split('-')[0]
     tasks.forEach(task => {
         let parentElement = task.parentNode.parentNode
         if (parentElement.tagName == 'DEL') {
