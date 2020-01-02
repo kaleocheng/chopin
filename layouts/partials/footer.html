@@ -2,7 +2,7 @@
 <footer>
 </footer>
 {{ if .Site.BuildDrafts }}
-    {{ if eq .Page.Type "plan" }}
+    {{ if eq .Page.Type "day" }}
         <script src="{{ .Site.BaseURL }}/js/plan.js"></script>
         <script type="text/javascript">improvePlan()</script>
     {{ end }}
