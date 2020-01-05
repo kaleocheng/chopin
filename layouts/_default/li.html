@@ -8,3 +8,8 @@
         class="hidde  hidden-when-small display-when-smaller hidden-when-smallest">{{ .Date | dateFormat "Jan" }}</span>
 </h1>
 {{ partial "tags.html" . }}
+{{ if eq .Section "cookbook"}}
+    {{ with .Params.time }}
+    <span class="time">{{ . }}</span>
+    {{ end }}
+{{ end }}
