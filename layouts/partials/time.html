@@ -1,0 +1,5 @@
+{{ if eq .Section "cookbook"}}
+    {{ with .Params.time }}
+    <span class="time">{{ . }}</span>
+    {{ end }}
+{{ end }}

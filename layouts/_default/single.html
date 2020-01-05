@@ -16,6 +16,7 @@
                     </span>
                     <h1 {{ if and (not .Draft) .Site.BuildDrafts }}class="public"{{end}}>{{ .Title }}</h1>
                     {{ partial "tags.html" . }}
+                    {{ partial "time.html" . }}
                 </header>
                     {{ if or (and (gt .WordCount 350) (gt (.TableOfContents | countwords) 10)) (in .Params.tags "toc")}}
                     <aside>
