@@ -179,10 +179,7 @@ ul {
 }
 
 .time {
-    &::before {
-        content: "🕗";
-        font-size: 0.9em;
-    }
+    $highlight_color;
     font-size: 0.9em;
 }
 
