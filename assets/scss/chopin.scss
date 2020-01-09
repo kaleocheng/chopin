@@ -1,14 +1,14 @@
-$bg_color: #fffff3;
-$body_color: #515256;
+//$bg_color: #fffff3;
+$bg_color: #222b32;
+//$body_color: #515256;
+$body_color: #c3b6a2;
 
 $help_link_color: #3aa6dd;
 $nav_link_color: #cd5c5c;
 
-$table_header_color: #fdf6e3;
-$border_color: #dddddd;
+$code_bg_color: #515256;
 $shadow_color: #999999;
 $highlight_color: #de5f85;
-$code_color: #000000;
 $body_font: "Fira Code", "Lucida Console", Monaco, Consolas, monospace, "SimSun", "adelle", "Georgia", serif;
 
 * {
@@ -82,13 +82,13 @@ h4 {
 }
 
 kbd {
-    border: 1px solid $body_color;
+    border: 0.5px solid $body_color;
     padding: 0 2px;
     border-radius: 2px;
-    box-shadow: 2px 2px .5px 0 $border_color;
+    box-shadow: 1px 1px .2px 0 $body_color;
     font-size: .8em;
     font-style: italic;
-    margin: 0px 0px 0px 2px;
+    margin: 0px 0px 0px 2.5px;
     display: inline-table;
 }
 
@@ -120,7 +120,9 @@ del {
 code {
     font-family: "Fira Code", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
     font-size: 80%;
-    color: $code_color;
+    color: $bg_color;
+    background: $body_color;
+    border-radius: 2px;
     white-space: pre-wrap;
 }
 
@@ -635,13 +637,15 @@ ul {
             }
 
             strong {
-                color: black;
+                color: $body_color;
             }
 
             pre {
                 padding-left: 2em;
                 padding-top: 0.75em;
                 padding-bottom: 0.75em;
+                border-radius: 5px;
+                background: $body_color;
             }
 
             p {
@@ -664,19 +668,18 @@ ul {
             }
 
             table {
-                border-collapse: collapse;
-                //display: block;
-                //overflow-x: auto;
                 border-style: hidden;
+                border-radius: 5px;
+                box-shadow: 0 0 0 1px $body_color;
+                border-collapse: collapse;
                 width:100%;
                 color: $body_color;
                 margin-bottom: 2em;
-                //white-space: nowrap;
                 overflow-wrap: break-word;
                 max-width: 100%;
                 table-layout: fixed;
                 thead {
-                    background-color: $table_header_color;
+                    border: 1px solid $body_color;
                     tr {
                         font-size:1.1em;
                         text-align:left;
@@ -685,8 +688,7 @@ ul {
                     }
                     th {
                         padding: 10px;
-                        border: 1px solid $border_color;
-                        border-top: 0;
+                        border: 1px solid $body_color;
                     }
                 }
                 tbody {
@@ -700,22 +702,10 @@ ul {
                     }
                     td {
                         vertical-align: top;
-                        border: 1px solid $border_color;
+                        border: 1px solid $body_color;
                         text-align: left;
                         padding: 0.2em 0.5em 0.2em 0.5em;
                     }
-               }
-               thead tr th:first-child {
-                    border-left: 0;
-               }
-               tbody tr td:first-child {
-                    border-left: 0;
-               }
-               thead tr th:last-child {
-                    border-right: 0;
-               }
-               tbody tr td:last-child {
-                    border-right: 0;
                }
             }
 
