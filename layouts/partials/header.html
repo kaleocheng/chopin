@@ -1,7 +1,10 @@
 <header class="header">
     <div id="logo">
         <a href="/">{{ .Site.Title }}</a>
+        <input type="checkbox"  id="themeSwitch" class="theme-checkbox"></input>
+        <label for="themeSwitch" class="theme-label"></label>
     </div>
+
     <div class="header-right">
         {{ range after 1 .Site.Menus.main }}
         {{ if eq $.Kind "home" }}
