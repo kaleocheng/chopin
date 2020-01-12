@@ -142,5 +142,4 @@ function darkMode(){
 docReady(function() {
     makeCollapsible()
     shortenURL(document.links)
-    darkMode()
 })

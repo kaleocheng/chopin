@@ -15,6 +15,10 @@ html {
     html {
       --body-color: #c3b6a2;
       --bg-color: #222b32;
+      img {
+        filter: invert(100%) hue-rotate(180deg);
+        mix-blend-mode: screen;
+      }
     }
 }
 
