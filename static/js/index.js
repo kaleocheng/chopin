@@ -112,33 +112,6 @@ function makeCollapsible() {
     })
 }
 
-function darkMode(){
-    let themeSwitch = document.getElementById('themeSwitch')
-    let darkThemeSelected = (localStorage.getItem('themeSwitch') !== null && localStorage.getItem('themeSwitch') === 'dark')
-    darkThemeSelected ? document.documentElement.setAttribute('data-theme', 'dark') : document.documentElement.setAttribute('data-theme', 'light')
-    if(themeSwitch) {
-        themeSwitch.checked = darkThemeSelected
-        themeSwitch.addEventListener('change', function(event){
-            document.documentElement.classList.add('color-theme-in-transition')
-            resetTheme()
-            window.setTimeout(function() {
-                document.documentElement.classList.remove('color-theme-in-transition')
-            }, 1000)
-        })
-
-        function resetTheme() {
-            if(themeSwitch.checked) {
-              document.documentElement.setAttribute('data-theme', 'dark')
-              localStorage.setItem('themeSwitch', 'dark')
-            } else {
-              document.documentElement.setAttribute('data-theme', 'light')
-              localStorage.setItem('themeSwitch', 'light')
-            }
-        }
-    }
-}
-
-
 docReady(function() {
     makeCollapsible()
     shortenURL(document.links)
