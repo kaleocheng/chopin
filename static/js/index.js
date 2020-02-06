@@ -23,7 +23,7 @@ function isValidUrl(string){
 
 function shortenURL(links){
     links = Array.from(links)
-    links.forEach(link => {
+    links.filter(link => isValidUrl(link.innerHTML)).forEach(link => {
         if (link.hostname == 'github.com'){
             const pathArray = link.pathname.slice(1).split('/')
             const user = pathArray[0]
@@ -41,18 +41,16 @@ function shortenURL(links){
             return
         }
 
-        if(isValidUrl(link.innerHTML)){
-            const url = new URL(link.innerHTML)
-            link.innerHTML = url.hostname.replace(/^www\./, "")
-            let after = url.pathname + url.search + url.hash
-            after = after.split(".html")[0].replace(/\/$/, "")
-            if (after.length > 30) {
-                after = after.split('/').pop()
-                link.innerHTML += `/${after}`
-                return
-            }
-            link.innerHTML += after
+        const url = new URL(link.innerHTML)
+        link.innerHTML = url.hostname.replace(/^www\./, "")
+        let after = url.pathname + url.search + url.hash
+        after = after.split(".html")[0].replace(/\/$/, "")
+        if (after.length > 30) {
+            after = after.split('/').pop()
+            link.innerHTML += `/${after}`
+            return
         }
+        link.innerHTML += after
     })
 }
 

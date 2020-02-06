@@ -12,3 +12,8 @@
 
 <a href="/{{.Section}}/">{{.Section}}</a>
 </span>
+{{ with .Params.homepage }}
+<span class="homepage">
+    <a href="{{ . }}">homepage</a>
+</span>
+{{ end }}
