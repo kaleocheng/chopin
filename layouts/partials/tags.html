@@ -1,16 +1,16 @@
 <span class="tags">
 {{ if and (not .Draft) .Site.BuildDrafts }}
-    <a class="public-tag" href="/public/">public</a>
+    <a class="tag public-tag" href="/public/">public</a>
 {{end}}
 
 {{ range .Params.tags}}
-    <a href="/tags/{{.}}">{{.}}</a>
+    <a class="tag" href="/tags/{{.}}">{{.}}</a>
 {{ end }}
 {{ range .Params.categories}}
-    <a href="/categories/{{.}}">{{.}}</a>
+    <a class="tag" href="/categories/{{.}}">{{.}}</a>
 {{ end }}
 
-<a href="/{{.Section}}/">{{.Section}}</a>
+<a class="tag" href="/{{.Section}}/">{{.Section}}</a>
 </span>
 {{ with .Params.homepage }}
 <span class="homepage">

@@ -176,7 +176,16 @@ ul {
     font-size: 0.9em;
 }
 
-.tags a {
+.homepage a {
+    float: right;
+    border-bottom: none !important;
+    &:hover {
+        color: var(--help-link-color) !important;
+        text-decoration: none;
+    }
+}
+
+.tag {
     border-bottom: none !important;
     &:hover {
         color: var(--help-link-color) !important;
@@ -184,15 +193,6 @@ ul {
     }
     &::before {
         content: "#" !important;
-    }
-}
-
-.homepage a {
-    float: right;
-    border-bottom: none !important;
-    &:hover {
-        color: var(--help-link-color) !important;
-        text-decoration: none;
     }
 }
 

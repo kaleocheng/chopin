@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+{{partial "head.html" .}}
+
+
+{{ $menus := (slice "") }}
+{{ range $menu := .Site.Menus.main }}
+{{ $menus = $menus | append $menu.Identifier }} 
+{{ end }}
+<body>
+    <div class="center-container">
+        {{partial "header.html" .}}
+
+        <div class="main">
+            <div class="articles">
+            {{ if .Site.BuildDrafts }}
+
+                {{ $tagsMap := newScratch }}
+                {{ $tagsIndex := slice }}
+                {{ $tagsKeyVaule := newScratch }}
+                {{ $englishChars := split "abcdefghijklmnopqrstuvwxyz" "" }}
+                {{ range .Site.Sections }}
+                    {{ if (not (in (slice "search" "term" "daily" "note" "plan") .Type)) }}
+                        {{ $tagsKeyVaule.Set .Type .Permalink }}
+
+                        {{ $firstChar := (lower (substr .Type 0 1)) }}
+                        {{ if (not (in $englishChars (lower $firstChar))) }}
+                            {{ $firstChar = "其他" }}
+                        {{ end }}
+                        {{ $tagsIndex = $tagsIndex | append $firstChar }}
+
+                        {{ if $tagsMap.Get $firstChar }}
+                            {{ $tagsMap.Add $firstChar (slice .Type)}}
+                        {{ else }}
+                            {{ $tagsMap.Set $firstChar slice }}
+                            {{ $tagsMap.Add $firstChar (slice .Type)}}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+                {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+                    {{ if in (slice "tags" "categories") $taxonomyname }}
+                        {{ range $key, $value := $taxonomy }}
+                            {{ with $.Site.GetPage (printf "/%s/%s" $taxonomyname $key) }}
+                                {{ $tagsKeyVaule.Set $key .Permalink }}
+                            {{ end }}
+
+                            {{ $firstChar := (lower (substr $key 0 1)) }}
+                            {{ if (not (in $englishChars (lower $firstChar))) }}
+                                {{ $firstChar = "其他" }}
+                            {{ end }}
+                            {{ $tagsIndex = $tagsIndex | append $firstChar }}
+
+                            {{ if $tagsMap.Get $firstChar }}
+                                {{ $tagsMap.Add $firstChar (slice $key)}}
+                            {{ else }}
+                                {{ $tagsMap.Set $firstChar slice }}
+                                {{ $tagsMap.Add $firstChar (slice $key)}}
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+                {{ $tagsIndex = sort (uniq $tagsIndex) }}
+                {{ range $index := $tagsIndex }}
+                    <h1>{{ upper $index}}</h1> 
+                    {{ range $tagsKey := $tagsMap.Get $index }}
+                        <a class="tag" href="{{ $tagsKeyVaule.Get $tagsKey }}">{{ $tagsKey }}</a>
+                    {{ end }}
+                {{ end }}
+            </div>
+         {{ end }}
+        </div>
+    </div>
+
+</body>
+{{ partial "footer.html" . }}
+</html>
+
