@@ -52,6 +52,11 @@ a {
     }
 }
 
+p {
+    margin-block-start: 1.4em;
+    margin-block-end: 1.4em;
+}
+
 h1,h2,h3,h4,h5 {
     margin: 10px 0 10px 0;
     font-weight: bold;
@@ -609,8 +614,6 @@ ul {
                 list-style-position: inside;
                 list-style-type: square;
                 padding-left: 2em;
-                padding-top: 0.75em;
-                padding-bottom: 0.75em;
 
                 li {
                     p {
@@ -622,8 +625,6 @@ ul {
             ol {
                 list-style-position: inside;
                 padding-left: 2em;
-                padding-top: 0.75em;
-                padding-bottom: 0.75em;
 
                 li {
                     p {
@@ -668,8 +669,6 @@ ul {
             p {
                 //text-indent: 2em;
                 word-break: normal;
-                padding-top: 0.75em;
-                padding-bottom: 0.75em;
                 hyphens: auto;
 
                 img {
