@@ -63,7 +63,19 @@
                 {{ range $index := $tagsIndex }}
                     <h1>{{ upper $index}}</h1> 
                     {{ range $tagsKey := $tagsMap.Get $index }}
-                        <a class="tag" href="{{ $tagsKeyVaule.Get $tagsKey }}">{{ $tagsKey }}</a>
+                        {{ $pagesCount := 0 }}
+                        {{ $filterByType := len (where $.Site.RegularPages ".Type" "eq" $tagsKey) }}
+                        {{ $filterByTagAndCatetory := len ( $.Site.RegularPages.RelatedTo ( keyVals "tags" $tagsKey) (keyVals "categories" $tagsKey))}}
+                        {{ $filterByDraft := len (where $.Site.RegularPages ".Draft" false ) }}
+                        {{ if $filterByType }}
+                            {{ $pagesCount = $filterByType }}
+                         {{ else if $filterByTagAndCatetory}}
+                            {{ $pagesCount = $filterByTagAndCatetory }}
+                         {{ else if $filterByDraft }}
+                            {{ $pagesCount = $filterByDraft }}
+                        {{ end }}
+                    <a class="tag" href="{{ $tagsKeyVaule.Get $tagsKey }}">{{ $tagsKey }}<span class="pages-count">{{ $pagesCount }}</span>
+                    </a>
                     {{ end }}
                 {{ end }}
             </div>
