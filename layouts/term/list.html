@@ -13,8 +13,6 @@
 
         <div class="main">
             <div class="articles">
-            {{ if .Site.BuildDrafts }}
-
                 {{ $tagsMap := newScratch }}
                 {{ $tagsIndex := slice }}
                 {{ $tagsKeyVaule := newScratch }}
@@ -60,26 +58,46 @@
                     {{ end }}
                 {{ end }}
                 {{ $tagsIndex = sort (uniq $tagsIndex) }}
+                {{ $tagsCount := newScratch }}
+                {{ $filteredTagsIndex := slice }}
                 {{ range $index := $tagsIndex }}
-                    <h1>{{ upper $index}}</h1> 
                     {{ range $tagsKey := $tagsMap.Get $index }}
                         {{ $pagesCount := 0 }}
-                        {{ $filterByType := len (where $.Site.RegularPages ".Type" "eq" $tagsKey) }}
-                        {{ $filterByTagAndCatetory := len ( $.Site.RegularPages.RelatedTo ( keyVals "tags" $tagsKey) (keyVals "categories" $tagsKey))}}
+                        {{ $intersectPages := $.Site.RegularPages }}
+                        {{ if not $.Site.BuildDrafts}}
+                            {{ $intersectPages = where $.Site.RegularPages ".Draft" false }}
+                        {{ end }}
+                        {{ $filterByType := len ((where $.Site.RegularPages ".Type" "eq" $tagsKey) | intersect $intersectPages) }}
+                        {{ $filterByTagAndCatetory := len (($.Site.RegularPages.RelatedTo ( keyVals "tags" $tagsKey) (keyVals "categories" $tagsKey)) | intersect $intersectPages)}}
                         {{ $filterByDraft := len (where $.Site.RegularPages ".Draft" false ) }}
                         {{ if $filterByType }}
                             {{ $pagesCount = $filterByType }}
                          {{ else if $filterByTagAndCatetory}}
                             {{ $pagesCount = $filterByTagAndCatetory }}
-                         {{ else if $filterByDraft }}
+                         {{ else if and $filterByDraft (eq $tagsKey "public") }}
                             {{ $pagesCount = $filterByDraft }}
                         {{ end }}
-                    <a class="tag" href="{{ $tagsKeyVaule.Get $tagsKey }}">{{ $tagsKey }}<span class="pages-count">{{ $pagesCount }}</span>
-                    </a>
+                        {{ $tagsCount.Set $tagsKey $pagesCount }}
+                        {{ if $pagesCount }}
+                            {{ $firstChar := (lower (substr $tagsKey 0 1)) }}
+                            {{ if (not (in $englishChars (lower $firstChar))) }}
+                                {{ $firstChar = "其他" }}
+                            {{ end }}
+                            {{ $filteredTagsIndex = $filteredTagsIndex | append $firstChar }}
+                        {{ end }}
+                    {{ end }}
+                    {{ $filteredTagsIndex = uniq $filteredTagsIndex }}
+                {{ end }}
+
+                {{ range $index := $filteredTagsIndex }}
+                    <h1>{{ upper $index}}</h1> 
+                    {{ range $tagsKey := $tagsMap.Get $index }}
+                        {{ if $tagsCount.Get $tagsKey }}
+                        <a class="tag" href="{{ $tagsKeyVaule.Get $tagsKey }}">{{ $tagsKey }}<span class="pages-count">{{ $tagsCount.Get $tagsKey }}</span></a>
+                        {{ end }}
                     {{ end }}
                 {{ end }}
             </div>
-         {{ end }}
         </div>
     </div>
 
