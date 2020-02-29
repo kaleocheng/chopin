@@ -54,6 +54,7 @@ function handleDate(){
                 title = document.createElement('H2')
                 title.id = id
                 title.innerHTML = `<a class="anchor" href="#${id}"><span>${id}</span></a>`
+                title.className = 'blur'
                 const ul = document.createElement('UL')
                 ul.setAttribute('class', 'without-bullets')
                 const li = createLi(current, task)
