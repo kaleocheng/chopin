@@ -35,6 +35,11 @@ function shortenURL(links){
             return
         }
 
+        if (link.hostname == 'paper.dropbox.com') {
+            link.innerHTML = link.pathname.slice(1).split('/')[1].split('--')[0]
+            return
+        }
+
         const url = new URL(link.innerHTML)
         link.innerHTML = url.hostname.replace(/^www\./, "")
         let after = url.pathname + url.search + url.hash
