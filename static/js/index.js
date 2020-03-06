@@ -40,6 +40,11 @@ function shortenURL(links){
             return
         }
 
+        if (link.hostname.match(/*\.slack\.com\/archives.*/)) {
+            link.innerHTML = `${link.hostname.split('.')[0]} slack`
+            return
+        }
+
         const url = new URL(link.innerHTML)
         link.innerHTML = url.hostname.replace(/^www\./, "")
         let after = url.pathname + url.search + url.hash
