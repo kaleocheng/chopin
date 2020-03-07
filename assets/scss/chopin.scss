@@ -122,7 +122,6 @@ hr::before {
 }
 
 del {
-    filter: blur(1.5px);
     color: var(--shadow-color);
     .at {
         background-color: var(--shadow-color);
@@ -662,6 +661,9 @@ ul {
 
             strong {
                 color: var(--body-color);
+                font-weight: 900;
+                text-emphasis-style: dot;
+                text-emphasis-position: under left;
             }
 
             pre {
