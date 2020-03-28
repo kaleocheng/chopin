@@ -538,18 +538,18 @@ ul {
                 text-transform: capitalize;
                 border-bottom: 2.5px solid var(--shadow-color);
                 padding-bottom: 0.5em;
-                &::after {
-                    content: " h1";
-                }
+                //&::after {
+                //    content: " h1";
+                //}
 
                 counter-reset: sub-section;
             }
 
 
             h2 {
-                &::after {
-                    content: " h2";
-                }
+                //&::after {
+                //    content: " h2";
+                //}
                 &::before {
                     counter-increment: sub-section;
                     content: counter(sub-section) " ";
@@ -558,9 +558,9 @@ ul {
             }
 
             h3 {
-                &::after {
-                    content: " h3";
-                }
+                //&::after {
+                //    content: " h3";
+                //}
                 &::before {
                     counter-increment: composite;
                     content: counter(sub-section) "." counter(composite) " ";
