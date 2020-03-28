@@ -31,6 +31,7 @@ body {
     color: var(--body-color); 
     max-width: 100%;
     overflow-x: hidden;
+    counter-reset: section;
 }
 
 ::selection {
@@ -70,23 +71,14 @@ h1,h2,h3,h4,h5 {
 
 h1 {
     font-size: 1.35em;
-    &::after {
-        content: " h1";
-    }
 }
 
 h2 {
     font-size: 1.2em;
-    &::after {
-        content: " h2";
-    }
 }
 
 h3 {
     font-size: 1em;
-    &::after {
-        content: " h3";
-    }
 }
 
 h4 {
@@ -380,7 +372,7 @@ ul {
             margin-bottom: 0;
             font-weight: normal;
             &::after {
-                content: "";
+                content: "" !important;
             }
             span {
                 float: right;
@@ -542,6 +534,41 @@ ul {
 
 
         .content {
+            h1:not(#article-title) {
+                text-transform: capitalize;
+                border-bottom: 2.5px solid var(--shadow-color);
+                padding-bottom: 0.5em;
+                &::after {
+                    content: " h1";
+                }
+
+                counter-reset: sub-section;
+            }
+
+
+            h2 {
+                &::after {
+                    content: " h2";
+                }
+                &::before {
+                    counter-increment: sub-section;
+                    content: counter(sub-section) " ";
+                }
+                counter-reset: composite;
+            }
+
+            h3 {
+                &::after {
+                    content: " h3";
+                }
+                &::before {
+                    counter-increment: composite;
+                    content: counter(sub-section) "." counter(composite) " ";
+                }
+    counter-reset: detail;
+            }
+
+
             #hits {
                 .ais-hits {
                     .ais-hits--item {
