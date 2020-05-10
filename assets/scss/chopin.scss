@@ -28,7 +28,7 @@ body {
     font-size: 18px;
     line-height: 1.5em;
     background: var(--bg-color);
-    color: var(--body-color); 
+    color: var(--body-color);
     max-width: 100%;
     overflow-x: hidden;
     counter-reset: section;
@@ -351,7 +351,7 @@ ul {
     }
 }
 
-@media (max-width: 355px) {  
+@media (max-width: 355px) {
     .grid-container {
         grid-template-columns: auto;
     }
@@ -409,14 +409,17 @@ ul {
     }
 
     .tweet {
-        margin-bottom: 1em;
-        p {
+        margin-top: 1.5em;
+        p:first-of-type {
             margin-top: 0;
         }
         .tweet-date {
             float: left;
             font-family: monospace;
             font-size: .8em;
+        }
+        img {
+            max-width: 350px;
         }
     }
 
@@ -624,7 +627,7 @@ ul {
                 font-weight: bold;
                 font-size: 0.9em;
             }
-            
+
             .task-list-item-done {
                 color: var(--shadow-color);
                 filter: blur(1.5px);
@@ -761,7 +764,7 @@ ul {
                               display: inline-block;
                             }
                         }
-                        
+
                     }
                     td {
                         vertical-align: top;
