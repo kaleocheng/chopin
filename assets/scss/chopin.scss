@@ -2,7 +2,8 @@ html {
     padding: 0;
     margin: 0;
     --body-color: #515256;
-    --bg-color: #fffff3;
+    //--bg-color: #fffff3;
+    --bg-color: #ffffff;
     --help-link-color: #3aa6dd;
     --nav-link-color: #cd5c5c;
     --code-bg-color: #515256;
@@ -737,9 +738,9 @@ ul {
             }
 
             table {
-                border-style: hidden;
+                //border-style: hidden;
                 border-radius: 5px;
-                box-shadow: 0 0 0 1px var(--body-color);
+                //box-shadow: 0 0 0 1px var(--body-color);
                 border-collapse: collapse;
                 width:100%;
                 color: var(--body-color);
@@ -748,7 +749,7 @@ ul {
                 max-width: 100%;
                 table-layout: fixed;
                 thead {
-                    border: 1px solid var(--body-color);
+                    border: 1px dashed var(--body-color);
                     tr {
                         font-size:1.1em;
                         text-align:left;
@@ -757,7 +758,7 @@ ul {
                     }
                     th {
                         padding: 10px;
-                        border: 1px solid var(--body-color);
+                        border: 1px dashed var(--body-color);
                     }
                 }
                 tbody {
@@ -771,7 +772,7 @@ ul {
                     }
                     td {
                         vertical-align: top;
-                        border: 1px solid var(--body-color);
+                        border: 1px dashed var(--body-color);
                         text-align: left;
                         padding: 0.2em 0.5em 0.2em 0.5em;
                     }
