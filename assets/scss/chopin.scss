@@ -554,6 +554,13 @@ ul {
         }
 
 
+        .day {
+            h2 {
+                &::before {
+                    content: none !important;
+                }
+            }
+        }
         .content {
             h1:not(#article-title) {
                 text-transform: capitalize;
