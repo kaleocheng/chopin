@@ -7,7 +7,7 @@ html {
     --help-link-color: #3aa6dd;
     --nav-link-color: #cd5c5c;
     --code-bg-color: #515256;
-    --shadow-color: #999999;
+    --shadow-color: #666666;
     --highlight-color: #de5f85;
     --body-font: "Fira Code", "Lucida Console", Monaco, Consolas, monospace, "Songti SC", "STSong", "SimSun", "adelle", "Georgia", serif;
 }
@@ -127,8 +127,8 @@ del {
 code {
     font-family: "Fira Code", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
     font-size: 80%;
-    color: var(--bg-color);
-    background: var(--body-color);
+    color: var(--shadow-color);
+    //background: var(--body-color);
     border-radius: 2px;
     white-space: pre-wrap;
 }
@@ -565,7 +565,7 @@ ul {
         .content {
             h1:not(#article-title) {
                 text-transform: capitalize;
-                border-bottom: 2.5px solid var(--shadow-color);
+                border-bottom: 2px solid var(--shadow-color);
                 padding-bottom: 0.5em;
                 //&::after {
                 //    content: " h1";
@@ -757,16 +757,16 @@ ul {
                 max-width: 100%;
                 table-layout: fixed;
                 thead {
-                    border: 1px dashed var(--body-color);
+                    border: 1px dashed var(--shadow-color);
                     tr {
-                        font-size:1.1em;
                         text-align:left;
                         padding-top:5px;
                         padding-bottom:4px;
                     }
                     th {
                         padding: 10px;
-                        border: 1px dashed var(--body-color);
+                        font-weight: normal;
+                        border: 1px dashed var(--shadow-color);
                     }
                 }
                 tbody {
@@ -780,7 +780,8 @@ ul {
                     }
                     td {
                         vertical-align: top;
-                        border: 1px dashed var(--body-color);
+                        border: 1px dashed var(--shadow-color);
+                        color: var(--shadow-color);
                         text-align: left;
                         padding: 0.2em 0.5em 0.2em 0.5em;
                     }
