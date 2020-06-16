@@ -6,7 +6,6 @@ html {
     --bg-color: #ffffff;
     --help-link-color: #3aa6dd;
     --nav-link-color: #cd5c5c;
-    --code-bg-color: #515256;
     --shadow-color: #666666;
     --highlight-color: #de5f85;
     --body-font: "Fira Code", "Lucida Console", Monaco, Consolas, monospace, "Songti SC", "STSong", "SimSun", "adelle", "Georgia", serif;
@@ -16,6 +15,7 @@ html {
     html {
       --body-color: #c3b6a2;
       --bg-color: #222b32;
+      --shadow-color: #a19480;
       img {
         filter: invert(100%) hue-rotate(180deg);
         mix-blend-mode: screen;
@@ -725,7 +725,7 @@ ul {
                 padding-top: 0.75em;
                 padding-bottom: 0.75em;
                 border-radius: 5px;
-                background: var(--body-color);
+                //background: var(--body-color);
             }
 
             p {
@@ -781,7 +781,6 @@ ul {
                     td {
                         vertical-align: top;
                         border: 1px dashed var(--shadow-color);
-                        color: var(--shadow-color);
                         text-align: left;
                         padding: 0.2em 0.5em 0.2em 0.5em;
                     }
