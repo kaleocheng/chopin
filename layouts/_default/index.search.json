@@ -1,0 +1,5 @@
+{{- $.Scratch.Add "tinySearchIndex" slice -}}
+{{- range .Site.RegularPages -}}
+    {{- $.Scratch.Add "tinySearchIndex" (dict "title" .Title "tags" .Params.tags "categories" .Params.categories "body" .Plain "url" .Permalink) -}}
+{{- end -}}
+{{- $.Scratch.Get "tinySearchIndex" | jsonify -}}
