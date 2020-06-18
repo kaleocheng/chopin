@@ -7,6 +7,7 @@ html {
     --help-link-color: #3aa6dd;
     --nav-link-color: #cd5c5c;
     --shadow-color: #666666;
+    --shadow-light-color: #999999;
     --highlight-color: #de5f85;
     --body-font: "Fira Code", "Lucida Console", Monaco, Consolas, monospace, "Songti SC", "STSong", "SimSun", "adelle", "Georgia", serif;
 }
@@ -205,12 +206,12 @@ ul {
 }
 
 .draft {
-    color: var(--shadow-color);
+    color: var(--shadow-light-color);
     a {
-        color: var(--shadow-color) !important;
+        color: var(--shadow-light-color) !important;
     }
     span {
-        color: var(--shadow-color);
+        color: var(--draft-color);
     }
 }
 
