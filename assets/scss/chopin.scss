@@ -417,8 +417,30 @@ ul {
                 font-size: 0.8em;
             }
 
-            .hidde {
-                display: none;
+        }
+    }
+
+    .hidde {
+        display: none;
+    }
+
+    section {
+        span {
+            float: right;
+            font-weight: normal;
+            font-family: monospace;
+            font-size: 0.8em;
+        }
+        h1 {
+            span {
+            }
+        }
+        h2 {
+            font-size: 1em;
+            font-weight: normal;
+            margin: 5px 0 5px 0;
+            &::after {
+                content: "" !important;
             }
         }
     }
