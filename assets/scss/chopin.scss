@@ -119,7 +119,19 @@ hr::before {
 }
 
 del {
-    color: var(--shadow-color);
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-bottom: 1.5px solid;
+    }
     .at {
         background-color: var(--shadow-color);
     }
@@ -206,7 +218,7 @@ ul {
 }
 
 .draft {
-    color: var(--shadow-light-color);
+    color: var(--shadow-light-color) !important;
     a {
         color: var(--shadow-light-color) !important;
     }
@@ -405,8 +417,30 @@ ul {
                 font-size: 0.8em;
             }
 
-            .hidde {
-                display: none;
+        }
+    }
+
+    .hidde {
+        display: none;
+    }
+
+    section {
+        span {
+            float: right;
+            font-weight: normal;
+            font-family: monospace;
+            font-size: 0.8em;
+        }
+        h1 {
+            span {
+            }
+        }
+        h2 {
+            font-size: 1em;
+            font-weight: normal;
+            margin: 5px 0 5px 0;
+            &::after {
+                content: "" !important;
             }
         }
     }
@@ -643,7 +677,7 @@ ul {
 
             .task-list-item-done {
                 color: var(--shadow-color);
-                filter: blur(1.5px);
+                //filter: blur(1.5px);
                 a {
                     color: var(--shadow-color);
                     border-color: var(--shadow-color);

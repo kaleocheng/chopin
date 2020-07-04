@@ -16,21 +16,41 @@
         {{ end }}
 
         {{ $posts := .Data.Pages }}
-        {{ if isset .Site.Params.nav .Section }}
-            {{ $posts =  where .Site.RegularPages ".Type" "in" (index .Site.Params.nav .Section)}}
+        {{ if isset .Site.Params.collection .Section }}
+            {{ $posts =  where .Site.RegularPages ".Type" "in" (index .Site.Params.collection .Section)}}
         {{ else if eq "public" .Section }}
             {{ $posts =  where .Site.RegularPages ".Draft" false }}
         {{ end }}
 
+        {{ $types := slice }}
+        {{ range $post := $posts }}
+        {{ $types = $types | append $post.Type}}
+        {{ end }}
+        {{ $types = $types | uniq }}
+
+
+        {{ if in .Site.Params.showInSection .Section }}
         <div class="main">
-            <div class="articles">
-                {{ $paginator := .Paginate $posts }}
-                {{ range $paginator.Pages }}
-                {{ .Render "li" }}
+                {{ range $type := $types }}
+                    <section>
+                        <h1 class="section">{{ $type }}<span><a href="/{{ $type }}">more</a></span></h1>
+                    {{ range $post := first 8 (where $posts "Type" $type) }}
+                            {{ .Render "li-section" }}
+                    {{ end }}
+                    </section>
                 {{ end }}
-            </div>
         </div>
-        {{ partial "pagination.html" $paginator }}
+        {{ else }}
+        <div class="main">
+             <div class="articles">
+                 {{ $paginator := .Paginate $posts }}
+                 {{ range $paginator.Pages }}
+                    {{ .Render "li" }}
+                 {{ end }}
+             </div>
+         </div>
+         {{ partial "pagination.html" $paginator }}
+        {{ end }}
     </div>
 </body>
 {{ partial "footer.html" . }}
