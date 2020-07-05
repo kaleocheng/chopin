@@ -21,6 +21,8 @@
         {{ $types = $types | uniq }}
 
         {{ if in .Site.Params.showInSection $section }}
+        {{ $collections := index .Site.Params.collection $section }}
+        {{ $types = $types | intersect $collections }}
         <div class="main">
                 {{ range $type := $types }}
                     <section>

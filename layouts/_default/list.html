@@ -5,8 +5,9 @@
 
 {{ $menus := (slice "") }}
 {{ range $menu := .Site.Menus.main }}
-{{ $menus = $menus | append $menu.Identifier }} 
+    {{ $menus = $menus | append $menu.Identifier }} 
 {{ end }}
+
 <body>
     <div class="center-container">
         {{ if and (in (slice "taxonomy" "taxonomyTerm" "section") .Kind) (not (in $menus .Section))}}
@@ -30,6 +31,8 @@
 
 
         {{ if in .Site.Params.showInSection .Section }}
+        {{ $collections := index .Site.Params.collection .Section }}
+        {{ $types = $types | intersect $collections }}
         <div class="main">
                 {{ range $type := $types }}
                     <section>
