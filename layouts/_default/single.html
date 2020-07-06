@@ -11,10 +11,10 @@
             <article>
                 {{ if not (in .Params.tags "clean") }}
                 <header>
+                    <h1 id="article-title" {{ if and (not .Draft) .Site.BuildDrafts }}class="public"{{end}}>{{ .Title }}</h1>
                     <span class="header-date">
                         {{ .Date | dateFormat "Jan 2, 2006" }} 
                     </span>
-                    <h1 id="article-title" {{ if and (not .Draft) .Site.BuildDrafts }}class="public"{{end}}>{{ .Title }}</h1>
                     {{ partial "tags.html" . }}
                     {{ partial "time.html" . }}
                 </header>
