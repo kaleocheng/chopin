@@ -40,6 +40,11 @@ function shortenURL(links){
             return
         }
 
+        if (link.hostname == 'www.notion.so') {
+            link.innerHTML = link.pathname.slice(1).split('/')[1].replace(/-[a-zA-Z0-9]*$/g, "")
+            return
+        }
+
         if (link.href.match(/\.slack\.com\/archives/)) {
             link.innerHTML = `${link.hostname.split('.')[0]} slack`
             return
