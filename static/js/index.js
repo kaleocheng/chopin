@@ -50,6 +50,11 @@ function shortenURL(links){
             return
         }
 
+        if (link.pathname.slice(1).startsWith('jira/')) {
+            link.innerHTML = link.pathname.slice(1).split('/').pop()
+            return
+        }
+
         const url = new URL(link.innerHTML)
         link.innerHTML = url.hostname.replace(/^www\./, "")
         let after = url.pathname + url.search + url.hash
