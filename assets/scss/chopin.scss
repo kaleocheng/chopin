@@ -248,6 +248,11 @@ ul {
 
 /*-------------------------*/
 .book-gallery {
+  h1 {
+      display: block;
+      width: 100%;
+      float: left;
+  }
 }
 .book-container {
   display: flex;
