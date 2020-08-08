@@ -1,6 +1,9 @@
 {{ $name := "" }}
 {{ if eq .Kind "section" }}
     {{ $name = .Type }}
+    {{ if eq $name "gallery" }}
+       {{ $name = path.Base .File.Dir }}
+    {{ end }}
 {{ else if eq .Kind "taxonomy" }}
     {{ $name = .LinkTitle }}
 {{ end }}

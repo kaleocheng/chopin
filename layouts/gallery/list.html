@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+{{partial "head.html" .}}
+<body>
+    <div class="center-container">
+        {{partial "header-tags.html" .}}
+
+        {{ $posts :=  where .Site.RegularPages ".Params.categories" "intersect" (slice "book" "ins") }}
+        {{ $years := slice "" }}
+        {{ range $post := $posts }}
+            {{ $years = $years | append ($post.Date.Format "2006") }}
+        {{ end }}
+        {{ $years = $years | uniq }}
+        <div class="main">
+            {{ $paginator := .Paginate $posts }}
+            {{ $currentPath := path.Base .File.Dir }}
+            {{ if eq $currentPath "book" }}
+            <div class="book-gallery">
+                {{ range $year := $years }}
+                 <h1>{{ $year }}</h1>
+                    {{ range $paginator.Pages }}
+                    {{ if eq (.Date.Format "2006") $year }}
+                         <a
+                          class="book-container"
+                          href="{{.Params.ref}}"
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                        <div class="book">
+                          <img
+                              alt="{{ .Title }}"
+                              src="{{ $.Page.Site.Params.assets }}/images/books/{{ .Params.cover }}"
+                           />
+                        </div>
+                         </a>
+                     {{ end }}
+                     {{ end }}
+                 {{ end }}
+            </div>
+            {{ end }}
+        </div>
+        {{ partial "pagination.html" $paginator }}
+    </div>
+</body>
+{{ partial "footer.html" . }}
+</html>
