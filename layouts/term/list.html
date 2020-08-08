@@ -40,6 +40,9 @@
                         {{ range $key, $value := $taxonomy }}
                             {{ with $.Site.GetPage (printf "/%s/%s" $taxonomyname $key) }}
                                 {{ $tagsKeyVaule.Set $key .Permalink }}
+                                {{ if in $.Site.Params.gallery $key }}
+                                    {{ $tagsKeyVaule.Set $key (replace .Permalink "categories" "gallery")}}
+                                {{ end }}
                             {{ end }}
 
                             {{ $firstChar := (lower (substr $key 0 1)) }}
