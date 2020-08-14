@@ -1,7 +1,13 @@
+{{ $content := .Content }}
+
+{{ if  and (in .Params.categories "book") (not $content) }}
+{{ $content = (printf "<p>《<a href=\"%s\">%s</a>》 %s</p>" .Params.ref .Params.title .Params.author) }}
+{{ end }}
+
 <div class="tweet {{ with .Draft }}draft{{ end }}">
     <span class="tweet-date">{{ .Date | dateFormat "Jan 2 2006" }}</span>
     <br />
-    {{ .Content | safeHTML }}
+    {{ $content | safeHTML }}
 <span {{ with .Draft }} class="draft" {{ end }}>
 {{ partial "tags.html" . }}
 </span>
