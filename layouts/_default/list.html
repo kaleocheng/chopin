@@ -5,7 +5,7 @@
 
 {{ $menus := (slice "") }}
 {{ range $menu := .Site.Menus.main }}
-    {{ $menus = $menus | append $menu.Identifier }} 
+    {{ $menus = $menus | append $menu.Identifier }}
 {{ end }}
 
 <body>

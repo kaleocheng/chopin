@@ -5,7 +5,7 @@
 
 {{ $menus := (slice "") }}
 {{ range $menu := .Site.Menus.main }}
-{{ $menus = $menus | append $menu.Identifier }} 
+{{ $menus = $menus | append $menu.Identifier }}
 {{ end }}
 <body>
     <div class="center-container">
@@ -40,9 +40,6 @@
                         {{ range $key, $value := $taxonomy }}
                             {{ with $.Site.GetPage (printf "/%s/%s" $taxonomyname $key) }}
                                 {{ $tagsKeyVaule.Set $key .Permalink }}
-                                {{ if in $.Site.Params.gallery $key }}
-                                    {{ $tagsKeyVaule.Set $key (replace .Permalink "categories" "gallery")}}
-                                {{ end }}
                             {{ end }}
 
                             {{ $firstChar := (lower (substr $key 0 1)) }}
@@ -93,7 +90,7 @@
                 {{ end }}
 
                 {{ range $index := $filteredTagsIndex }}
-                    <h1>{{ upper $index}}</h1> 
+                    <h1>{{ upper $index}}</h1>
                     {{ range $tagsKey := $tagsMap.Get $index }}
                         {{ if $tagsCount.Get $tagsKey }}
                         <a class="tag" href="{{ $tagsKeyVaule.Get $tagsKey }}">{{ $tagsKey }}<span class="pages-count">{{ $tagsCount.Get $tagsKey }}</span></a>

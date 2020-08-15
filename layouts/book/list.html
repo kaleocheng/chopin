@@ -5,7 +5,7 @@
     <div class="center-container">
         {{partial "header-tags.html" .}}
 
-        {{ $posts :=  where .Site.RegularPages ".Params.categories" "intersect" (slice "book" "ins") }}
+        {{ $posts :=  where .Site.RegularPages ".Section" "eq" "book" }}
         {{ $years := slice "" }}
         {{ range $post := $posts }}
             {{ $years = $years | append ($post.Date.Format "2006") }}
@@ -13,8 +13,6 @@
         {{ $years = $years | uniq }}
         <div class="main">
             {{ $paginator := .Paginate $posts }}
-            {{ $currentPath := path.Base .File.Dir }}
-            {{ if eq $currentPath "book" }}
             <div class="book-gallery">
                 {{ range $year := $years }}
                  <h1>{{ $year }}</h1>
@@ -37,7 +35,6 @@
                      {{ end }}
                  {{ end }}
             </div>
-            {{ end }}
         </div>
         {{ partial "pagination.html" $paginator }}
     </div>
