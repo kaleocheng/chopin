@@ -250,6 +250,7 @@ ul {
 
 /*-------------------------*/
 .book-gallery {
+  display: flow-root;
   h1 {
       display: block;
       width: 100%;
@@ -314,7 +315,7 @@ ul {
   width: 48px;
   height: 221px;
   transform: translateX(123px) rotateY(90deg);
-  background: linear-gradient(90deg, 
+  background: linear-gradient(90deg,
     #fff 0%,
     #f9f9f9 5%,
     #fff 10%,

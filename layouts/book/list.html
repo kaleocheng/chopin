@@ -6,14 +6,14 @@
         {{partial "header-tags.html" .}}
 
         {{ $posts :=  where .Site.RegularPages ".Section" "eq" "book" }}
-        {{ $years := slice "" }}
-        {{ range $post := $posts }}
-            {{ $years = $years | append ($post.Date.Format "2006") }}
-        {{ end }}
-        {{ $years = $years | uniq }}
         <div class="main">
             {{ $paginator := .Paginate $posts }}
             <div class="book-gallery">
+                {{ $years := slice "" }}
+                {{ range $post := $paginator.Pages }}
+                    {{ $years = $years | append ($post.Date.Format "2006") }}
+                {{ end }}
+                {{ $years = $years | uniq }}
                 {{ range $year := $years }}
                  <h1>{{ $year }}</h1>
                     {{ range $paginator.Pages }}
