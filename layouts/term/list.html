@@ -89,6 +89,16 @@
                     {{ $filteredTagsIndex = uniq $filteredTagsIndex }}
                 {{ end }}
 
+
+                {{ if isset .Site.Params "collection" }}
+                    <h1> GROUP </h1>
+                    {{ range $key, $value := .Site.Params.collection }}
+                        {{ $pagesCount := len (where $.Site.RegularPages ".Type" "in" (index $.Site.Params.collection $key)) }}
+                        <a class="group" href="/{{ $key }}">{{ $key }}<span class="pages-count">{{ $pagesCount }}</span></a>
+                    {{ end }}
+                {{ end }}
+
+
                 {{ range $index := $filteredTagsIndex }}
                     <h1>{{ upper $index}}</h1>
                     {{ range $tagsKey := $tagsMap.Get $index }}

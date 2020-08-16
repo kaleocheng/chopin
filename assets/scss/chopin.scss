@@ -206,6 +206,22 @@ ul {
     }
 }
 
+.group {
+    border-bottom: none !important;
+    &:hover {
+        color: var(--help-link-color) !important;
+        text-decoration: none;
+    }
+    &::before {
+        color: var(--shadow-color);
+        content: "[" !important;
+    }
+    &::after {
+        color: var(--shadow-color);
+        content: "]" !important;
+    }
+}
+
 .header-date {
     float: right;
 }
