@@ -1,20 +1,20 @@
 {{ $name := "" }}
 {{ if eq .Kind "section" }}
     {{ $name = .Type }}
-    {{ if eq $name "gallery" }}
-       {{ $name = path.Base .File.Dir }}
-    {{ end }}
 {{ else if eq .Kind "taxonomy" }}
     {{ $name = .LinkTitle }}
 {{ end }}
 {{ $pagesCount := 0 }}
 {{ $filterByType := len (where $.Site.RegularPages ".Type" "eq" $name) }}
 {{ $filterByTagAndCatetory := len ( $.Site.RegularPages.RelatedTo ( keyVals "tags" $name) (keyVals "categories" $name))}}
+{{ $filterByCollection := len (where $.Site.RegularPages ".Type" "in" ( index $.Site.Params.collection $name)) }}
 {{ $filterByDraft := len (where $.Site.RegularPages ".Draft" false ) }}
 {{ if $filterByType }}
     {{ $pagesCount = $filterByType }}
  {{ else if $filterByTagAndCatetory}}
     {{ $pagesCount = $filterByTagAndCatetory }}
+ {{ else if $filterByCollection }}
+    {{ $pagesCount = $filterByCollection }}
  {{ else if $filterByDraft }}
     {{ $pagesCount = $filterByDraft }}
 {{ end }}
