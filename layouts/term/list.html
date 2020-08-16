@@ -91,7 +91,7 @@
 
 
                 {{ if isset .Site.Params "collection" }}
-                    <h1> GROUP </h1>
+                    <h1> </h1>
                     {{ range $key, $value := .Site.Params.collection }}
                         {{ $pagesCount := len (where $.Site.RegularPages ".Type" "in" (index $.Site.Params.collection $key)) }}
                         <a class="group" href="/{{ $key }}">{{ $key }}<span class="pages-count">{{ $pagesCount }}</span></a>
