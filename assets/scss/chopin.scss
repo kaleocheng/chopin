@@ -10,7 +10,7 @@ html {
     --shadow-light-color: #999999;
     --highlight-color: #de5f85;
     --border-shadow-color: #666;
-    --body-font: "Fira Code", "Lucida Console", Monaco, Consolas, monospace, "Songti SC", "STSong", "SimSun", "adelle", "Georgia", serif;
+    --body-font: "Fira Code", "Lucida Console", Monaco, Consolas, monospace, "adelle", "Georgia", serif, "Songti SC", "STSong", "SimSun";
 }
 
 @media (prefers-color-scheme: dark) {
@@ -94,7 +94,7 @@ h4 {
 
 kbd {
     border: 0.5px solid var(--body-color);
-    padding: 0 2px;
+    padding: 0 4px;
     border-radius: 2px;
     box-shadow: 1px 1px .2px 0 var(--body-color);
     font-size: .8em;
@@ -857,14 +857,14 @@ ul {
             }
 
             blockquote {
-                padding-left: 1.6em;
                 color: var(--shadow-color);
                 strong {
                     color: var(--body-color);
                 }
                 p {
                   &::before {
-                      content: '＊';
+                      //content: '＊';
+                      content: '> ';
                       font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji";
                       font-weight: bold;
                   }
