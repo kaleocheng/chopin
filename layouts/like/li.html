@@ -1,0 +1,8 @@
+<div class="tweet {{ with .Draft }}draft{{ end }}">
+    <span class="tweet-date">{{ .Date | dateFormat "Jan 2 2006" }}</span>
+    <br />
+    {{ .Content | safeHTML }}
+    <span {{ with .Draft }} class="draft" {{ end }}>
+        {{ partial "tags.html" . }}
+    </span>
+</div>
