@@ -67,10 +67,13 @@
                         {{ if not $.Site.BuildDrafts}}
                             {{ $intersectPages = where $.Site.RegularPages ".Draft" false }}
                         {{ end }}
+                        {{ $filterByLike := add (len (where $.Site.RegularPages ".Type" "eq" "like")) (len (where $.Site.RegularPages ".Params.like" true)) }}
                         {{ $filterByType := len ((where $.Site.RegularPages ".Type" "eq" $tagsKey) | intersect $intersectPages) }}
                         {{ $filterByTagAndCatetory := len (($.Site.RegularPages.RelatedTo ( keyVals "tags" $tagsKey) (keyVals "categories" $tagsKey)) | intersect $intersectPages)}}
                         {{ $filterByDraft := len (where $.Site.RegularPages ".Draft" false ) }}
-                        {{ if $filterByType }}
+                        {{ if eq $tagsKey "like"}}
+                            {{ $pagesCount = $filterByLike }}
+                        {{ else if $filterByType }}
                             {{ $pagesCount = $filterByType }}
                          {{ else if $filterByTagAndCatetory}}
                             {{ $pagesCount = $filterByTagAndCatetory }}

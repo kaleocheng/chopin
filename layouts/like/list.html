@@ -14,6 +14,7 @@
         {{ $likeSectionPosts := where .Site.RegularPages ".Type" "eq" "like"}}
         {{ $likeParamsPosts := where .Site.RegularPages ".Params.like" true }}
         {{ $posts := $likeSectionPosts | union $likeParamsPosts }}
+        {{ $posts = $posts.ByDate.Reverse }}
         <div class="main">
              <div class="articles">
                  {{ $paginator := .Paginate $posts }}
