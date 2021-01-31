@@ -3,6 +3,6 @@
     <br />
     {{ .Content | safeHTML }}
     <span {{ with .Draft }} class="draft" {{ end }}>
-        {{ partial "tags.html" . }}
+    {{ partial "tags.html" . }}
     </span>
 </div>

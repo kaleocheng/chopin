@@ -17,3 +17,8 @@
     <a href="{{ . }}">homepage</a>
 </span>
 {{ end }}
+
+{{ with .Params.like }}
+    <a class="tag" href="/like">like</a>
+{{ end }}
+

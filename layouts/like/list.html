@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+{{partial "head.html" .}}
+
+
+{{ $menus := (slice "") }}
+{{ range $menu := .Site.Menus.main }}
+    {{ $menus = $menus | append $menu.Identifier }}
+{{ end }}
+
+<body>
+    <div class="center-container">
+        {{partial "header-like.html" .}}
+        {{ $likeSectionPosts := where .Site.RegularPages ".Type" "eq" "like"}}
+        {{ $likeParamsPosts := where .Site.RegularPages ".Params.like" true }}
+        {{ $posts := $likeSectionPosts | union $likeParamsPosts }}
+        <div class="main">
+             <div class="articles">
+                 {{ $paginator := .Paginate $posts }}
+                 {{ range $paginator.Pages }}
+                    {{ .Render "li" }}
+                 {{ end }}
+             </div>
+         </div>
+         {{ partial "pagination.html" $paginator }}
+    </div>
+</body>
+{{ partial "footer.html" . }}
+</html>

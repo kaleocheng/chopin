@@ -1,0 +1,13 @@
+{{ $name := "like" }}
+{{ $pagesCount := 0 }}
+{{ $filterByType := len (where $.Site.RegularPages ".Type" "eq" $name) }}
+{{ $filterByParams := len (where $.Site.RegularPages ".Params.like" true ) }}
+{{ $pagesCount = add $filterByType $filterByParams }}
+<header class="header">
+   <div id="logo">
+       #{{ $name }}:<span class="pages-count">{{ $pagesCount }}</span>
+   </div>
+    <div class="header-right">
+        <a href="/">{{ .Site.Title }}</a>
+    </div>
+</header>
