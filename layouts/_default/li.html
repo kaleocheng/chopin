@@ -1,11 +1,7 @@
 <h1>
+    <span>{{ .Date | dateFormat "Jan 2 2006" }}</span>
+    <br/>
     <a href="{{ .Permalink }}">{{ .Title }}</a>
-    <span
-        class="hidden-when-small hidden-when-smaller hidden-when-smallest">{{ .Date | dateFormat "Jan 2, 2006" }}</span>
-    <span
-        class="hidde  display-when-small hidden-when-smaller hidden-when-smallest">{{ .Date | dateFormat "Jan 2" }}</span>
-    <span
-        class="hidde  hidden-when-small display-when-smaller hidden-when-smallest">{{ .Date | dateFormat "Jan" }}</span>
 </h1>
 {{ partial "tags.html" . }}
 {{ partial "time.html" . }}
