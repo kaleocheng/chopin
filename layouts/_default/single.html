@@ -18,7 +18,7 @@
                     {{ partial "tags.html" . }}
                     {{ partial "time.html" . }}
                 </header>
-                    {{ if or (and (gt .WordCount 350) (gt (.TableOfContents | countwords) 10)) (in .Params.tags "toc")}}
+                    {{ if or (and (gt .WordCount 350) (gt (.TableOfContents | countwords) 10)) .Params.toc }}
                     <aside>
                         <div id="tableofcontents">
                             {{.TableOfContents}}
