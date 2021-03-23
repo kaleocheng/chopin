@@ -992,6 +992,16 @@ ul {
     }
 }
 
+.footnotes {
+    hr::before {
+        content: "";
+        border-bottom: 1px solid;
+    }
+    ol {
+        list-style-position: outside !important;
+    }
+}
+
 /*------------------*/
 
 /*----- footer -----*/
