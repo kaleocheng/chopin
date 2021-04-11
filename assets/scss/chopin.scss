@@ -19,7 +19,7 @@ html {
       --bg-color: #222b32;
       --shadow-color: #a19480;
       --border-shadow-color: #6a6a6a5e;
-      img {
+      drak-img {
         filter: invert(100%) hue-rotate(180deg);
         mix-blend-mode: screen;
       }
@@ -291,10 +291,6 @@ ul {
 }
 
 .book {
-    img {
-        filter: none !important;
-        mix-blend-mode: normal !important;
-    }
   width: 150px;
   height: 225px;
   position: relative;
