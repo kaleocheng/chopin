@@ -7,7 +7,7 @@
         <div class="main">
         <div class="articles">
             <div class="tweet {{ with .Draft }}draft{{ end }}">
-                <span class="tweet-date">{{ .Date | dateFormat "Jan 2 2006" }}</span>
+                <span class="tweet-date">{{ .Date | dateFormat "Mon, 02 Jan 2006 15:04:05" }}</span>
                 <br />
                 {{ .Content | safeHTML }}
             <span {{ with .Draft }} class="draft" {{ end }}>
