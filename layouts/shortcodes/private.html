@@ -1,3 +1,3 @@
 {{ if .Site.BuildDrafts }}
-{{ markdownify .Inner }}
+<div class="draft">{{ markdownify .Inner }}</div>
 {{ end }}
