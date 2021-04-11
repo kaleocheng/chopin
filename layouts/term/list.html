@@ -97,7 +97,7 @@
                     <h1>Assortment</h1>
                     {{ range $key, $value := .Site.Params.collection }}
                         {{ $pagesCount := len (where $.Site.RegularPages ".Type" "in" (index $.Site.Params.collection $key)) }}
-                        <a class="group" href="/{{ $key }}">{{ $key }}<span class="pages-count">{{ $pagesCount }}</span></a>
+                        <a class="group helper" href="/{{ $key }}">{{ $key }}<span class="pages-count">{{ $pagesCount }}</span></a>
                     {{ end }}
                 {{ end }}
 
@@ -106,7 +106,7 @@
                     <h1>{{ upper $index}}</h1>
                     {{ range $tagsKey := $tagsMap.Get $index }}
                         {{ if $tagsCount.Get $tagsKey }}
-                        <a class="tag" href="{{ $tagsKeyVaule.Get $tagsKey }}">{{ $tagsKey }}<span class="pages-count">{{ $tagsCount.Get $tagsKey }}</span></a>
+                        <a class="tag helper" href="{{ $tagsKeyVaule.Get $tagsKey }}">{{ $tagsKey }}<span class="pages-count">{{ $tagsCount.Get $tagsKey }}</span></a>
                         {{ end }}
                     {{ end }}
                 {{ end }}

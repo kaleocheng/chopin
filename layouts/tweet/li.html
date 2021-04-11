@@ -1,5 +1,9 @@
 <div class="tweet {{ with .Draft }}draft{{ end }}">
+    {{ if .Site.BuildDrafts }}
+    <span class="tweet-date"><a class="helper" href="/tweet/{{ .Params.slug }}/">{{ .Date | dateFormat "Jan 2 2006" }}</a></span>
+    {{ else }}
     <span class="tweet-date">{{ .Date | dateFormat "Jan 2 2006" }}</span>
+    {{ end }}
     <br />
     {{ .Content | safeHTML }}
 <span {{ with .Draft }} class="draft" {{ end }}>

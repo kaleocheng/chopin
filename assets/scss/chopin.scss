@@ -195,23 +195,21 @@ ul {
     }
 }
 
-.tag {
-    border-bottom: none !important;
+.helper {
     &:hover {
         color: var(--help-link-color) !important;
         text-decoration: none;
     }
+    border-bottom: none !important;
+}
+
+.tag {
     &::before {
         content: "#" !important;
     }
 }
 
 .group {
-    border-bottom: none !important;
-    &:hover {
-        color: var(--help-link-color) !important;
-        text-decoration: none;
-    }
     &::before {
         color: var(--shadow-color);
         content: "[" !important;
