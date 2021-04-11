@@ -3,9 +3,14 @@
     <br />
     {{ .Content | safeHTML }}
 
+    {{ $assetsURL := $.Page.Site.Params.assets }}
+    {{ with .Draft }}
+      {{ $assetsURL = printf "%s/%s" $.Page.Site.Params.assets "private" }}
+    {{ end }}
+
     {{ range $p := .Params.pic }}
         <img
-            src="{{ $.Page.Site.Params.assets }}/images/ins/{{ $p }}"
+            src="{{ $assetsURL }}/images/ins/{{ $p }}"
          />
     {{ end }}
     <br/>
