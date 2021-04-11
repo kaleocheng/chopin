@@ -8,12 +8,13 @@
       {{ $assetsURL = printf "%s/%s" $.Page.Site.Params.assets "private" }}
     {{ end }}
 
+    <div class="ins">
     {{ range $p := .Params.pic }}
         <img
             src="{{ $assetsURL }}/images/ins/{{ $p }}"
          />
     {{ end }}
-    <br/>
+    </div>
 <span {{ with .Draft }} class="draft" {{ end }}>
 {{ partial "tags.html" . }}
 </span>

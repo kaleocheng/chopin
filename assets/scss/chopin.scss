@@ -203,6 +203,13 @@ ul {
     border-bottom: none !important;
 }
 
+.ins {
+    display: flex;
+    img {
+        margin-right: 5px;
+    }
+}
+
 .tag {
     &::before {
         content: "#" !important;
