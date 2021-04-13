@@ -1,7 +1,7 @@
 <p {{ with .Draft }} class="draft" {{ end }}>
     <span>{{ .Date | dateFormat "Jan 2 2006" }}</span>
     <br />
-    {{ .Summary | plainify | safeHTML | truncate 100 }} {{ if gt (countwords .Content) 100 }}<a href="{{ .Permalink }}"><{{ .Title }}></a> {{ end }}
+    {{ .Content | safeHTML | truncate 100 }} {{ if gt (countwords .Content) 100 }}<a href="{{ .Permalink }}"><{{ .Title }}></a> {{ end }}
 </p>
 <span {{ with .Draft }} class="draft" {{ end }}>
 {{ partial "tags.html" . }}
