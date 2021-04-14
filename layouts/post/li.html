@@ -1,10 +1,12 @@
 <p {{ with .Draft }} class="draft" {{ end }}>
-    <span>{{ .Date | dateFormat "Jan 2 2006" }}</span>
-    <br />
-    {{ if gt (countwords .Content) 100 }}
-    {{ .Summary | plainify | safeHTML | truncate 100 }}<a href="{{ .Permalink }}"><{{ .Title }}></a> 
+    {{ if and .Site.BuildDrafts (lt (countwords .Content) 100)}}
+      <span><a class="helper" href="{{ .Permalink }}/">{{ .Date | dateFormat "Jan 2 2006" }}</a></span>
+      <br />
+      {{ .Content | safeHTML }}
     {{ else }}
-       {{ .Content | safeHTML }}
+      <span>{{ .Date | dateFormat "Jan 2 2006" }}</span>
+      <br />
+      {{ .Summary | plainify | safeHTML | truncate 100 }}<a href="{{ .Permalink }}"><{{ .Title }}></a>
     {{ end }}
 </p>
 <span {{ with .Draft }} class="draft" {{ end }}>
