@@ -10,8 +10,11 @@ html {
     --shadow-light-color: #999999;
     --highlight-color: #de5f85;
     --border-shadow-color: #666;
-    --body-font: "Fira Code", "Lucida Console", Monaco, Consolas, monospace, "adelle", "Georgia", serif, "Songti SC", "STSong", "SimSun";
+    //--body-font: "Fira Code", "Lucida Console", Monaco, Consolas, monospace, "adelle", "Georgia", serif, "Songti SC", "STSong", "SimSun";
+    --body-font: "Merriweather", "Georgia", serif, "Songti SC", "STSong", "SimSun";
+    --title-font: "Fira Code", "Lucida Console", Monaco, Consolas, monospace, "adelle", "Georgia", sans-serif, "Songti SC", "STSong", "SimSun";
 }
+
 
 @media (prefers-color-scheme: dark) {
     html {
@@ -65,6 +68,7 @@ p {
 p:empty {display:none;}
 
 h1,h2,h3,h4,h5 {
+    font-family: var(--title-font);
     margin: 10px 0 10px 0;
     font-weight: bold;
     &::after {
@@ -155,6 +159,7 @@ ul {
 }
 
 .at {
+    font-family: var(--title-font);
     background-color: var(--body-color);
     border-radius: 3px;
     color: var(--bg-color);
@@ -212,12 +217,14 @@ ul {
 }
 
 .tag {
+    font-family: var(--title-font);
     &::before {
         content: "#" !important;
     }
 }
 
 .group {
+    font-family: var(--title-font);
     &::before {
         color: var(--shadow-color);
         content: "[" !important;
@@ -391,6 +398,7 @@ ul {
 .header {
     width: 100%;
     padding: 40px 0;
+    font-family: var(--title-font);
 
     a {
         color: var(--body-color);
@@ -407,6 +415,7 @@ ul {
         width: 40%;
         float: left;
         font-size: 1.25em;
+        font-family: var(--title-font);
     }
 
     .header-right {
@@ -614,6 +623,7 @@ ul {
             filter: blur(2.5px);
         }
         .references {
+            font-family: var(--title-font);
             color: var(--bg-color);
             display: block;
             background: var(--body-color);
@@ -707,6 +717,10 @@ ul {
             ul {
                 padding-left: 0;
                 list-style-type: none;
+            }
+
+            #tableofcontents {
+                font-family: var(--title-font);
             }
 
             #tableofcontents nav ul li {
@@ -878,10 +892,11 @@ ul {
             }
 
             strong {
-                color: var(--body-color);
+                //color: var(--body-color);
+                color: var(--highlight-color);
                 font-weight: 900;
-                text-emphasis-style: dot;
-                text-emphasis-position: under left;
+                //text-emphasis-style: dot;
+                //text-emphasis-position: under left;
             }
 
             pre {
@@ -910,9 +925,6 @@ ul {
             }
 
             table {
-                //border-style: hidden;
-                border-radius: 5px;
-                //box-shadow: 0 0 0 1px var(--body-color);
                 border-collapse: collapse;
                 width:100%;
                 color: var(--body-color);
@@ -921,7 +933,7 @@ ul {
                 max-width: 100%;
                 table-layout: fixed;
                 thead {
-                    border: 1px dashed var(--shadow-color);
+                    border: 1px solid var(--shadow-color);
                     tr {
                         text-align:left;
                         padding-top:5px;
@@ -930,7 +942,9 @@ ul {
                     th {
                         padding: 10px;
                         font-weight: normal;
-                        border: 1px dashed var(--shadow-color);
+                        border: 0.5px solid var(--shadow-color);
+                        border-bottom: 2px solid var(--shadow-color);
+                        border-top: 2px solid var(--shadow-color);
                     }
                 }
                 tbody {
@@ -944,7 +958,7 @@ ul {
                     }
                     td {
                         vertical-align: top;
-                        border: 1px dashed var(--shadow-color);
+                        border: 0.5px solid var(--shadow-color);
                         text-align: left;
                         padding: 0.2em 0.5em 0.2em 0.5em;
                     }
