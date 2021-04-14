@@ -11,8 +11,8 @@ html {
     --highlight-color: #de5f85;
     --border-shadow-color: #666;
     //--body-font: "Fira Code", "Lucida Console", Monaco, Consolas, monospace, "adelle", "Georgia", serif, "Songti SC", "STSong", "SimSun";
-    --body-font: "Merriweather", "Georgia", serif, "Songti SC", "STSong", "SimSun";
-    --title-font: "Fira Code", "Lucida Console", Monaco, Consolas, monospace, "adelle", "Georgia", sans-serif, "Songti SC", "STSong", "SimSun";
+    --body-font: "Optima", "Gill Sans","Open Sans",Helvetica, sans-serif, "Songti SC", "STSong", "SimSun";
+    --mono-font: "Fira Code", "Lucida Console", Monaco, Consolas, monospace,"Songti SC", "STSong", "SimSun";
 }
 
 
@@ -68,7 +68,7 @@ p {
 p:empty {display:none;}
 
 h1,h2,h3,h4,h5 {
-    font-family: var(--title-font);
+    font-family: var(--mono-font);
     margin: 10px 0 10px 0;
     font-weight: bold;
     &::after {
@@ -159,7 +159,7 @@ ul {
 }
 
 .at {
-    font-family: var(--title-font);
+    font-family: var(--mono-font);
     background-color: var(--body-color);
     border-radius: 3px;
     color: var(--bg-color);
@@ -217,14 +217,14 @@ ul {
 }
 
 .tag {
-    font-family: var(--title-font);
+    font-family: var(--mono-font);
     &::before {
         content: "#" !important;
     }
 }
 
 .group {
-    font-family: var(--title-font);
+    font-family: var(--mono-font);
     &::before {
         color: var(--shadow-color);
         content: "[" !important;
@@ -398,7 +398,7 @@ ul {
 .header {
     width: 100%;
     padding: 40px 0;
-    font-family: var(--title-font);
+    font-family: var(--mono-font);
 
     a {
         color: var(--body-color);
@@ -415,7 +415,7 @@ ul {
         width: 40%;
         float: left;
         font-size: 1.25em;
-        font-family: var(--title-font);
+        font-family: var(--mono-font);
     }
 
     .header-right {
@@ -623,7 +623,7 @@ ul {
             filter: blur(2.5px);
         }
         .references {
-            font-family: var(--title-font);
+            font-family: var(--mono-font);
             color: var(--bg-color);
             display: block;
             background: var(--body-color);
@@ -720,7 +720,7 @@ ul {
             }
 
             #tableofcontents {
-                font-family: var(--title-font);
+                font-family: var(--mono-font);
             }
 
             #tableofcontents nav ul li {
