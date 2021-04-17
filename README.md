@@ -1,3 +1,5 @@
+**More and more customized stuff in this theme, moved it to a private repo.**
+
 # Chopin
 
 A sample theme for  [Hugo](http://gohugo.io).
