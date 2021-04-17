@@ -165,6 +165,19 @@ ul {
     color: var(--bg-color);
 }
 
+.vertical {
+    writing-mode: vertical-rl;
+    overflow-x: auto !important;
+}
+
+.vertical-content {
+    max-height: 450px;
+}
+
+.right-side {
+    float: right;
+}
+
 .rss {
     float: left;
     padding-top: 2px;

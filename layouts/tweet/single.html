@@ -4,16 +4,14 @@
 
 <body>
     <div class="center-container">
-        <div class="main">
-        <div class="articles">
-            <div class="tweet {{ with .Draft }}draft{{ end }}">
+        <div class="main vertical">
+          <div class="tweet vertical-content right-side {{ with .Draft }}draft{{ end }}">
                 <span class="tweet-date">{{ .Date | dateFormat "Mon, 02 Jan 2006 15:04:05" }}</span>
                 <br />
                 {{ .Content | safeHTML }}
-            <span {{ with .Draft }} class="draft" {{ end }}>
+            <span class="right-side {{ with .Draft }} draft {{ end }}">
             {{ partial "tags.html" . }}
             </span>
-            </div>
         </div>
     </div>
 </body>
